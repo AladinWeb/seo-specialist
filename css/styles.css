@@ -364,6 +364,7 @@ main {
 }
 
 .cta-content h2 {
+  color : #ffffff;
   font-size: 1.875rem;
   font-weight: bold;
   margin-bottom: 16px;
@@ -393,7 +394,7 @@ main {
 /* Footer Styles */
 footer {
   background: linear-gradient(135deg, #1e3a8a, #ec4899, #8b5cf6, black);
-  color: #d1d5db;
+  color: #ffffff;
   padding: 16px;
   text-align: center;
 }
@@ -415,7 +416,7 @@ footer {
 }
 
 .footer-link {
-  color: #d1d5db;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
