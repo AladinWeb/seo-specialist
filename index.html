@@ -4,79 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Modular Website</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-gray-100 font-sans">
+<body>
   <!-- Header Component -->
-  <header id="header" class="sticky top-0 z-50"></header>
+  <header id="header" class="sticky-header"></header>
 
   <!-- Main Content -->
-  <main class="container mx-auto px-4 py-8 min-h-screen">
+  <main>
     <!-- Hero Section -->
-    <section class="hero-section relative text-center py-16 md:py-24 text-white rounded-lg overflow-hidden animate-fadeIn">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#1e3a8a] via-[#ec4899] to-[#8b5cf6] opacity-80"></div>
-      <div class="relative z-10">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Your Blog</h1>
-        <p class="text-lg md:text-xl mb-6">Add your tagline or introduction here.</p>
-        <a href="#" class="inline-block bg-white text-[#1e3a8a] font-semibold py-3 px-6 rounded-full hover:bg-[#ec4899] hover:text-white transition-all duration-300">Get Started</a>
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Welcome to Your Blog</h1>
+        <p>Add your tagline or introduction here.</p>
+        <a href="#" class="hero-button">Get Started</a>
       </div>
     </section>
 
     <!-- Blog Category Section -->
-    <section class="category-section py-12">
-      <h2 class="text-3xl font-bold text-center text-white mb-8 animate-fadeIn">Blog Categories</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="category-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fadeIn">
-          <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Category 1</h3>
-          <p class="text-gray-600">Add description for category 1 here.</p>
+    <section class="category-section">
+      <h2>Blog Categories</h2>
+      <div class="category-grid">
+        <div class="category-card animate-fadeIn" style="background-image: url('images/entertainment-bg.jpeg'); animation-delay: 0s;">
+          <div class="category-content">
+            <h3>Entertainment</h3>
+            <p>Add description for Entertainment here.</p>
+          </div>
         </div>
-        <div class="category-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fadeIn" style="animation-delay: 0.2s;">
-          <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Category 2</h3>
-          <p class="text-gray-600">Add description for category 2 here.</p>
+        <div class="category-card animate-fadeIn" style="background-image: url('images/travel-bg.jpeg'); animation-delay: 0.2s;">
+          <div class="category-content">
+            <h3>Travel</h3>
+            <p>Add description for Travel here.</p>
+          </div>
         </div>
-        <div class="category-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fadeIn" style="animation-delay: 0.4s;">
-          <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Category 3</h3>
-          <p class="text-gray-600">Add description for category 3 here.</p>
+        <div class="category-card animate-fadeIn" style="background-image: url('images/transportation-bg.jpeg'); animation-delay: 0.4s;">
+          <div class="category-content">
+            <h3>Transportation</h3>
+            <p>Add description for Transportation here.</p>
+          </div>
         </div>
-        <div class="category-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fadeIn" style="animation-delay: 0.6s;">
-          <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Category 4</h3>
-          <p class="text-gray-600">Add description for category 4 here.</p>
+        <div class="category-card animate-fadeIn" style="background-image: url('images/health-bg.jpeg'); animation-delay: 0.6s;">
+          <div class="category-content">
+            <h3>Health</h3>
+            <p>Add description for Health here.</p>
+          </div>
+        </div>
+        <div class="category-card animate-fadeIn" style="background-image: url('images/construction-bg.jpeg'); animation-delay: 0.8s;">
+          <div class="category-content">
+            <h3>Construction</h3>
+            <p>Add description for Construction here.</p>
+          </div>
+        </div>
+        <div class="category-card animate-fadeIn" style="background-image: url('images/real-estate-bg.jpeg'); animation-delay: 1s;">
+          <div class="category-content">
+            <h3>Real Estate</h3>
+            <p>Add description for Real Estate here.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Featured Blogs Section -->
-    <section class="featured-blogs py-12">
-      <h2 class="text-3xl font-bold text-center text-white mb-8 animate-fadeIn">Featured Blogs</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="blog-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fadeIn">
-          <img src="images/blog-placeholder1.jpg" alt="Blog 1" class="w-full h-48 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Blog Post 1</h3>
-          <p class="text-gray-600 mb-4">Add a brief description of your blog post here.</p>
-          <a href="#" class="text-[#ec4899] font-semibold hover:underline">Read More</a>
+    <section class="featured-blogs">
+      <h2>Featured Blogs</h2>
+      <div class="blog-grid">
+        <div class="blog-card animate-fadeIn" style="animation-delay: 0s;">
+          <img src="images/blog-placeholder1.jpg" alt="Blog 1">
+          <h3>Blog Post 1</h3>
+          <p>Add a brief description of your blog post here.</p>
+          <a href="#" class="blog-link">Read More</a>
         </div>
-        <div class="blog-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fadeIn" style="animation-delay: 0.2s;">
-          <img src="images/blog-placeholder2.jpg" alt="Blog 2" class="w-full h-48 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Blog Post 2</h3>
-          <p class="text-gray-600 mb-4">Add a brief description of your blog post here.</p>
-          <a href="#" class="text-[#ec4899] font-semibold hover:underline">Read More</a>
+        <div class="blog-card animate-fadeIn" style="animation-delay: 0.2s;">
+          <img src="images/blog-placeholder2.jpg" alt="Blog 2">
+          <h3>Blog Post 2</h3>
+          <p>Add a brief description of your blog post here.</p>
+          <a href="#" class="blog-link">Read More</a>
         </div>
-        <div class="blog-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 animate-fadeIn" style="animation-delay: 0.4s;">
-          <img src="images/blog-placeholder3.jpg" alt="Blog 3" class="w-full h-48 object-cover rounded-lg mb-4">
-          <h3 class="text-xl font-semibold text-[#1e3a8a] mb-2">Blog Post 3</h3>
-          <p class="text-gray-600 mb-4">Add a brief description of your blog post here.</p>
-          <a href="#" class="text-[#ec4899] font-semibold hover:underline">Read More</a>
+        <div class="blog-card animate-fadeIn" style="animation-delay: 0.4s;">
+          <img src="images/blog-placeholder3.jpg" alt="Blog 3">
+          <h3>Blog Post 3</h3>
+          <p>Add a brief description of your blog post here.</p>
+          <a href="#" class="blog-link">Read More</a>
         </div>
       </div>
     </section>
 
     <!-- Call to Action Section -->
-    <section class="cta-section text-center py-16 text-white rounded-lg animate-fadeIn">
-      <div class="bg-gradient-to-r from-[#1e3a8a] via-[#ec4899] to-[#8b5cf6] p-8 rounded-lg">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Join Our Community</h2>
-        <p class="text-lg md:text-xl mb-6">Add your call-to-action message here.</p>
-        <a href="#" class="inline-block bg-white text-[#1e3a8a] font-semibold py-3 px-6 rounded-full hover:bg-[#ec4899] hover:text-white transition-all duration-300">Sign Up Now</a>
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Join Our Community</h2>
+        <p>Add your call-to-action message here.</p>
+        <a href="#" class="cta-button">Sign Up Now</a>
       </div>
     </section>
   </main>
@@ -84,7 +103,6 @@
   <!-- Footer Component -->
   <footer id="footer"></footer>
 
-  <script src="js/components.js"></script>
-  <script src="js/animations.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
