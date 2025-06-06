@@ -1,0 +1,98 @@
+/* Custom Styles for Animations and Components */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Mixed Paint Gradient with Random Curves */
+body {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 1000"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="50" xChannelSelector="R" yChannelSelector="G"/></filter></defs><rect width="100%" height="100%" fill="black"/><path d="M0,200 Q250,100 500,300 T1000,400 Q750,600 500,700 T0,600 Q250,400 500,300 T1000,200" fill="url(#gradient1)" filter="url(#noise)"/><path d="M0,400 Q300,200 600,400 T1000,600 Q700,800 400,600 T0,800 Q300,600 600,400 T1000,400" fill="url(#gradient2)" filter="url(#noise)"/><defs><linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1"/><stop offset="50%" style="stop-color:#ec4899;stop-opacity:0.8"/><stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.9"/></linearGradient><linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.9"/><stop offset="50%" style="stop-color:#ec4899;stop-opacity:0.8"/><stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1"/></linearGradient></defs></svg>') fixed;
+  background-size: cover;
+}
+
+header nav {
+  background: linear-gradient(135deg, #1e3a8a, #ec4899, #8b5cf6);
+  color: white;
+}
+
+footer {
+  background: linear-gradient(135deg, #1e3a8a, #ec4899, #8b5cf6, black);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.logo-title {
+  position: relative;
+  transition: color 0.3s ease;
+  color: white;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ec4899;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ec4899;
+  background-color: rgb(255, 255, 255);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.logo-title:hover {
+  color: #ec4899;
+}
+
+.footer-link {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #d1d5db;
+}
+
+.footer-link:hover {
+  color: #ec4899;
+  transform: translateY(-2px);
+}
+
+.hamburger div {
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.hamburger.active .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line2 {
+  opacity: 0;
+}
+
+.hamburger.active .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.mobile-menu {
+  background: linear-gradient(135deg, #1e3a8a, #ec4899, #8b5cf6);
+}
