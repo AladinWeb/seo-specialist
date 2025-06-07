@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: url('../images/background.jpeg') fixed;
+  background: url('../images/background.jpg') fixed;
   background-size: cover;
   position: relative;
   min-height: 100vh;
@@ -20,7 +20,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(236, 72, 153, 0.3), rgba(139, 92, 246, 0.3), rgba(0, 0, 0, 0.3));
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.5), rgba(236, 72, 153, 0.5), rgba(139, 92, 246, 0.5), rgba(0, 0, 0, 0.5));
   pointer-events: none;
 }
 
@@ -294,8 +294,9 @@ main {
   font-size: 1.875rem;
   font-weight: bold;
   text-align: center;
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 32px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .blog-grid {
@@ -364,14 +365,16 @@ main {
 }
 
 .cta-content h2 {
-  color : #ffffff;
   font-size: 1.875rem;
   font-weight: bold;
+  color: #ffffff !important;
   margin-bottom: 16px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .cta-content p {
   font-size: 1.125rem;
+  color: #ffffff;
   margin-bottom: 24px;
 }
 
@@ -394,7 +397,7 @@ main {
 /* Footer Styles */
 footer {
   background: linear-gradient(135deg, #1e3a8a, #ec4899, #8b5cf6, black);
-  color: #ffffff;
+  color: #d1d5db;
   padding: 16px;
   text-align: center;
 }
@@ -405,7 +408,9 @@ footer {
 }
 
 .footer-content p {
+  color: #ffffff !important;
   margin-bottom: 8px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .footer-links {
@@ -416,7 +421,7 @@ footer {
 }
 
 .footer-link {
-  color: #ffffff;
+  color: #ffffff !important;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
