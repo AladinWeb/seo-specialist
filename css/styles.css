@@ -227,7 +227,7 @@ main {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(3, 400px);
   gap: 16px;
   justify-items: center;
   justify-content: center;
