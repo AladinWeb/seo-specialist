@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+  <!-- Header Component -->
+  <header id="header" class="sticky-header"></header>
 
+  <!-- Main Content -->
+  <main>
+    <!-- Blog List Section -->
+    <section class="blog-section">
+      <h2>Blog Posts</h2>
+      <div class="filter-container">
+        <span>Category:</span>
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="travel">Travel</option>
+          <option value="transportation">Transportation</option>
+          <option value="health">Health</option>
+          <option value="construction">Construction</option>
+          <option value="real-estate">Real Estate</option>
+        </select>
+        <span>Date:</span>
+        <select id="dateFilter">
+          <!-- Populated dynamically by JavaScript -->
+        </select>
+        <button id="upToDateButton">Up to Date</button>
+      </div>
+      <div id="blogGrid" class="blog-grid"></div>
+      <div id="pagination" class="pagination"></div>
+      <div id="noBlogsMessage" class="no-blogs-message"></div>
+    </section>
+  </main>
+
+  <!-- Footer Component -->
+  <footer id="footer"></footer>
+
+  <script src="js/scripts.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>
