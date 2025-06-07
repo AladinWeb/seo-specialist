@@ -1,6 +1,6 @@
 // Blog Data (Sample data, replace with your actual data)
 const blogs = [
-  { id: 1, title: 'My Thrilling Journey with Stars777: India’s Best Online Gaming Platform', category: 'entertainment', date: '2025-06-07', content: 'A personal account of exploring Stars777.org...', image: '/seo-specialist/images/stars777-placeholder.jpeg' },
+  { id: 1, title: 'My Thrilling Journey with Stars777: India’s Best Online Gaming Platform', category: 'entertainment', date: '2025-06-08', content: 'A personal account of exploring Stars777.org...', image: '/seo-specialist/images/stars777-placeholder.jpeg' },
   { id: 2, title: 'Blog Post 2', category: 'travel', date: '2025-06-08', content: 'Add a brief description of your blog post here.', image: 'images/blog-placeholder2.jpg' },
   { id: 3, title: 'Blog Post 3', category: 'transportation', date: '2025-06-08', content: 'Add a brief description of your blog post here.', image: 'images/blog-placeholder3.jpg' },
   { id: 4, title: 'Blog Post 4', category: 'health', date: '2025-06-08', content: 'Add a brief description of your blog post here.', image: 'images/blog-placeholder1.jpg' },
