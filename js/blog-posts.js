@@ -4,7 +4,7 @@ const blogs = [
   { id: 2, title: 'My Seamless Car Shipping Experience with AmeriFreight | June 2025', category: 'transportation', date: '2025-06-09', content: 'Discover why AmeriFreight is America’s trusted car shipping solution.', image: '/seo-specialist/images/amerifreight-placeholder2.jpeg' },
   { id: 3, title: 'My Hassle-Free Door-to-Door Car Shipping with AmeriFreight', category: 'transportation', date: '2025-06-10', content: 'Explore my seamless experience with AmeriFreight’s door-to-door car shipping.', image: '/seo-specialist/images/amerifreight-placeholder3.jpeg' },
   { id: 4, title: 'My Thrilling Stars777 Online Gaming Experience | Seamless Fun in 2025', category: 'entertainment', date: '2025-06-10', content: 'Explore why Stars777 is 2025 top gaming platform—diverse games, secure payments, and stellar support all in one place!', image: '/seo-specialist/images/stars777-placeholder2.jpeg' },
-  { id: 5, title: 'Blog Post 5', category: 'construction', date: '2025-06-07', content: 'Add a brief description of your blog post here.', image: '/images/blog-placeholder2.jpg' },
+  { id: 5, title: 'My Home Transformation with Beyond Builders', category: 'construction', date: '2025-06-11', content: 'Discover how Beyond Builders transformed my home with expert construction and remodeling services in the Bay Area.', image: '/images/beyond-builders-placeholder.jpeg' },
   { id: 6, title: 'Blog Post 6', category: 'real-estate', date: '2025-06-07', content: 'Add a brief description of your blog post here.', image: '/images/blog-placeholder3.jpg' },
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
