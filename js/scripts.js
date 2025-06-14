@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <li><a href="/seo-specialist/" class="nav-link">Home</a></li>
         <li><a href="/seo-specialist/about-us.html" class="nav-link">About</a></li>
         <li><a href="/seo-specialist/blog.html" class="nav-link">Blog</a></li>
-        <li><a href="#" class="nav-link">Contact</a></li>
+        <li><a href="/seo-specialist/contact-us.html" class="nav-link">Contact</a></li>
       </ul>
     </nav>
     <div class="mobile-menu">
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <li><a href="/seo-specialist/" class="nav-link">Home</a></li>
         <li><a href="/seo-specialist/about-us.html" class="nav-link">About</a></li>
         <li><a href="/seo-specialist/blog.html" class="nav-link">Blog</a></li>
-        <li><a href="#" class="nav-link">Contact</a></li>
+        <li><a href="/seo-specialist/contact-us.html" class="nav-link">Contact</a></li>
       </ul>
     </div>
   `;
