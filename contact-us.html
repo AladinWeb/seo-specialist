@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with [Your Company Name] for inquiries, support, or collaboration. Contact us today!">
+  <meta name="keywords" content="[Your Company Name], contact us, support, inquiry, contact form, location, Google Maps, [Your Industry]">
+  <title>Contact Us | [Your Company Name]</title>
+  <link rel="stylesheet" href="/seo-specialist/css/styles.css">
+</head>
+<body>
+  <header id="header" class="sticky-header"></header>
+  <div class="contact-us">
+    <h1>Contact [Your Company Name]</h1>
+    <p>We’d love to hear from you! Whether you have questions, need support, or want to collaborate, feel free to reach out. Fill out the form below or find us at our location. Our team is available to assist you.</p>
+    <p><em>Note: This form is still in testing mode and will not send emails. Thank you for your patience!</em></p>
+
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><strong>Email:</strong> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+      <p><strong>Phone:</strong> (123) 456-7890</p>
+      <p><strong>Address:</strong> [Your Address], [City, State, ZIP]</p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="map-section">
+      <h2>Our Location</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.761844632896!2d-97.762305!3d30.267153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b599e8d8b96d%3A0x7e7e8f9f4f1b2c3d!2sAustin%2C%20TX!5e0!3m2!1sen!2sus!4v1623456789!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <p>Ready to connect? Send us a message or visit us at our location. We’re here to help you every step of the way!</p>
+  </div>
+  
+  <footer id="footer"></footer>
+  <script src="/seo-specialist/js/scripts.js"></script>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      if (name && email && subject && message) {
+        alert('Thank you, ' + name + '! Your message has been received for testing purposes. This is a simulation and no email will be sent.');
+        document.getElementById('contactForm').reset();
+      } else {
+        alert('Please fill out all fields before submitting.');
+      }
+    }
+  </script>
+</body>
+</html>
