@@ -11,16 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <ul class="nav-links">
         <li><a href="/seo-specialist/" class="nav-link">Home</a></li>
-        <li><a href="#" class="nav-link">About</a></li>
+        <li><a href="/seo-specialist/about-us.html" class="nav-link">About</a></li>
         <li><a href="/seo-specialist/blog.html" class="nav-link">Blog</a></li>
         <li><a href="#" class="nav-link">Contact</a></li>
       </ul>
     </nav>
     <div class="mobile-menu">
       <ul>
-        <li><a href="#" class="nav-link">Home</a></li>
-        <li><a href="#" class="nav-link">About</a></li>
-        <li><a href="#" class="nav-link">Blog</a></li>
+        <li><a href="/seo-specialist/" class="nav-link">Home</a></li>
+        <li><a href="/seo-specialist/about-us.html" class="nav-link">About</a></li>
+        <li><a href="/seo-specialist/blog.html" class="nav-link">Blog</a></li>
         <li><a href="#" class="nav-link">Contact</a></li>
       </ul>
     </div>
