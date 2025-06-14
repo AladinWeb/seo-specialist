@@ -431,6 +431,105 @@ footer {
   transform: translateY(-2px);
 }
 
+.about-us {
+    position: relative;
+    padding: 40px 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ff4e50, #f9d423, #4facfe, #00f2fe);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    overflow: hidden;
+}
+
+.about-us h1 {
+    font-size: 2.5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 1.8em;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.about-us p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.about-us ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-us ul li {
+    font-size: 1.1em;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.about-us ul li strong {
+    color: #ffd700;
+}
+
+.about-us img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-us a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-us a:hover {
+    text-decoration: underline;
+}
+
+/* Wave overlay effect */
+.about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff22" fill-opacity="0.1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,106.7C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128V320H1392C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0V64Z"></path></svg>');
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.about-us * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
 /* Responsive Adjustments */
 @media (min-width: 640px) {
   .hero-content h1 {
