@@ -437,9 +437,11 @@ footer {
     color: #333;
     font-family: Arial, sans-serif;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 10 auto;
     background: #fff;
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about-us h1 {
@@ -480,7 +482,7 @@ footer {
 }
 
 .about-us ul li strong {
-    color: #ffd700;
+    color: #ff69b4;
 }
 
 .about-us img {
