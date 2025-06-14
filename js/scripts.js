@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <ul class="footer-links">
         <li><a href="#" class="footer-link">Privacy Policy</a></li>
         <li><a href="#" class="footer-link">Terms of Service</a></li>
-        <li><a href="#" class="footer-link">Contact Us</a></li>
+        <li><a href="/seo-specialist/contact-us.html" class="footer-link">Contact Us</a></li>
       </ul>
     </div>
   `;
