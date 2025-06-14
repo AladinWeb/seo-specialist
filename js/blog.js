@@ -6,7 +6,7 @@ const blogs = [
   { id: 4, title: 'My Thrilling Stars777 Online Gaming Experience | Seamless Fun in 2025', category: 'entertainment', date: '2025-06-10', content: 'Explore why Stars777 is 2025 top gaming platform—diverse games, secure payments, and stellar support all in one place!', image: '/seo-specialist/images/stars777-placeholder2.jpeg' },
   { id: 5, title: 'My Home Transformation with Beyond Builders', category: 'construction', date: '2025-06-11', content: 'Discover how Beyond Builders transformed my home with expert construction and remodeling services in the Bay Area.', image: '/seo-specialist/images/beyond-builders-placeholder.jpeg' },
   { id: 6, title: 'My Mental Wellness Journey with Mynd Works', category: 'health', date: '2025-06-12', content: 'My journey with Mynd Works Psychiatry: personalized mental health care with innovative treatments in Austin, TX.', image: '/seo-specialist/images/mynd-works-placeholder.jpeg' },
-  { id: 6, title: 'Healing with Integrative Psychiatry at Mynd Works', category: 'health', date: '2025-06-13', content: 'Explore integrative psychiatry at Mynd Works in Austin, TX—my journey to personalized mental health with science-backed care.', image: '/seo-specialist/images/mynd-works-integrative-placeholder.jpeg' }
+  { id: 7, title: 'Healing with Integrative Psychiatry at Mynd Works', category: 'health', date: '2025-06-13', content: 'Explore integrative psychiatry at Mynd Works in Austin, TX—my journey to personalized mental health with science-backed care.', image: '/seo-specialist/images/mynd-works-integrative-placeholder.jpeg' }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const blogsPerPage = 20;
