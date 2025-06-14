@@ -431,7 +431,7 @@ footer {
   transform: translateY(-2px);
 }
 
-.about-us {
+.about-us, .contact-us, .contact-info {
     position: relative;
     padding: 40px 20px;
     color: #333;
@@ -446,7 +446,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.about-us h1 {
+.about-us h1, .contact-us h1 {
     font-size: 2.5em;
     color: #000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -454,7 +454,7 @@ footer {
     text-align: center;
 }
 
-.about-us h2 {
+.about-us h2, .contact-info h2, .contact-info h2 {
     font-size: 1.8em;
     color: #111;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
@@ -462,7 +462,7 @@ footer {
     margin-bottom: 15px;
 }
 
-.about-us p {
+.about-us p, .contact-us p, .contact-info p {
     font-size: 1.1em;
     line-height: 1.6;
     color: #111;
@@ -497,19 +497,106 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.about-us a {
+.about-us a, .contact-info a {
     color: #ff69b4;
     text-decoration: none;
     font-weight: bold;
 }
 
-.about-us a:hover {
+.about-us a:hover, .contact-info a:hover {
     text-decoration: underline;
 }
 
 .about-us * {
     position: relative;
     z-index: 2;
+}
+
+.contact-us em {
+    color: #ffd700;
+    font-style: italic;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.contact-form h2 {
+    font-size: 1.8em;
+    color: #111;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    font-size: 1.1em;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    background: #ffd700;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #e6c200;
+}
+
+/* Map Section Styling */
+.map-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.map-section h2 {
+    font-size: 1.8em;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 15px;
+}
+
+.map-section iframe {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
 }
 
 /* Responsive Adjustments */
