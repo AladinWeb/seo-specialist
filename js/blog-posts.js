@@ -9,7 +9,8 @@ const blogs = [
   { id: 7, title: 'Healing with Integrative Psychiatry at Mynd Works', category: 'health', date: '2025-06-13', content: 'Explore integrative psychiatry at Mynd Works in Austin, TX—my journey to personalized mental health with science-backed care.', image: '/seo-specialist/images/mynd-works-integrative-placeholder.jpeg' },
   { id: 8, title: 'My Journey with PhotoAndVideoEdits Real Estate Editing', category: 'real-estate', date: '2025-06-14', content: 'Discover my experience with PhotoAndVideoEdits real estate photo editing services—fast turnaround and stunning visuals in 2025.', image: '/seo-specialist/images/photoandvideoedits-placeholder.jpeg' },
   { id: 9, title: 'Discovering Nashville with Experience Tours', category: 'travel', date: '2025-06-15', content: 'Explore my journey with Nashville Experience Tours—unique walking and van tours revealing Music City’s history in 2025.', image: '/seo-specialist/images/nashville-tours-placeholder.jpeg' },
-  { id: 10, title: 'Exploring Stars777 Slot Games', category: 'entertainment', date: '2025-06-16', content: 'My experience with Stars777 slot games—exciting gameplay and fast withdrawals in 2025.', image: '/seo-specialist/images/stars777-placeholder3.jpeg' }
+  { id: 10, title: 'Exploring Stars777 Slot Games', category: 'entertainment', date: '2025-06-16', content: 'My experience with Stars777 slot games—exciting gameplay and fast withdrawals in 2025.', image: '/seo-specialist/images/stars777-placeholder3.jpeg' },
+  { id: 11, title: 'My Adventure with Stars777 Casino Games', category: 'entertainment', date: '2025-06-16', content: 'My exciting journey with Stars777 online casino games—secure play and fun slots in 2025.', image: '/seo-specialist/images/stars777-casino-placeholder.jpeg' }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
 document.addEventListener('DOMContentLoaded', () => {
