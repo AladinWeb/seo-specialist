@@ -446,7 +446,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.about-us h1, .contact-us h1 .privacy-policy h1, .terms-of-service h1 {
+.about-us h1, .contact-us h1, .privacy-policy h1, .terms-of-service h1 {
     font-size: 2.5em;
     color: #000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
