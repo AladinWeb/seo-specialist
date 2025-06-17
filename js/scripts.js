@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="footer-content">
       <p>&copy; ${new Date().getFullYear()} My Blog. All rights reserved.</p>
       <ul class="footer-links">
-        <li><a href="#" class="footer-link">Privacy Policy</a></li>
-        <li><a href="#" class="footer-link">Terms of Service</a></li>
+        <li><a href="/seo-specialist/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+        <li><a href="/seo-specialist/terms-of-service.html" class="footer-link">Terms of Service</a></li>
         <li><a href="/seo-specialist/contact-us.html" class="footer-link">Contact Us</a></li>
       </ul>
     </div>
