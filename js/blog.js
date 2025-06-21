@@ -13,7 +13,7 @@ const blogs = [
   { id: 11, title: 'My Adventure with Stars777 Casino Games', category: 'entertainment', date: '2025-06-16', content: 'My exciting journey with Stars777 online casino games—secure play and fun slots in 2025.', image: '/seo-specialist/images/stars777-casino-placeholder.jpeg' },
   { id: 12, title: 'Navigating College Moves with AmeriFreight’s Student Discount', category: 'transportation', date: '2025-06-17', content: 'My experience with AmeriFreight’s student discount for car shipping—affordable and stress-free in 2025.', image: '/seo-specialist/images/amerifreight-student-placeholder.jpeg' },
   { id: 13, title: 'Transforming Spaces with Go Beyond Builders’ Commercial Renovations', category: 'construction', date: '2025-06-17', content: 'My experience with Go Beyond Builders’ commercial renovations—expertise and stunning results in 2025.', image: '/seo-specialist/images/gobeyondbuilders-placeholder.jpeg' },
-  { id: 13, title: 'Elevating Content with Photo and Video Edits’ Video Editing Services', category: 'real-estate', date: '2025-06-18', content: 'Discover how Photo and Video Edits transformed my video content with professional editing services in 2025.', image: '/seo-specialist/images/photoandvideoedits2-placeholder.jpeg' }
+  { id: 14, title: 'Elevating Content with Photo and Video Edits’ Video Editing Services', category: 'real-estate', date: '2025-06-18', content: 'Discover how Photo and Video Edits transformed my video content with professional editing services in 2025.', image: '/seo-specialist/images/photoandvideoedits2-placeholder.jpeg' }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const blogsPerPage = 20;
