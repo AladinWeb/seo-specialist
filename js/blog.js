@@ -1,20 +1,5 @@
-// Blog Data (Sample data, replace with your actual data)
-const blogs = [
-  { id: 1, title: 'My Thrilling Journey with Stars777: India’s Best Online Gaming Platform', category: 'entertainment', date: '2025-06-08', content: 'A personal account of exploring Stars777.org...', image: '/seo-specialist/images/stars777-placeholder.jpeg' },
-  { id: 2, title: 'My Seamless Car Shipping Experience with AmeriFreight | June 2025', category: 'transportation', date: '2025-06-09', content: 'Discover why AmeriFreight is America’s trusted car shipping solution.', image: '/seo-specialist/images/amerifreight-placeholder2.jpeg' },
-  { id: 3, title: 'My Hassle-Free Door-to-Door Car Shipping with AmeriFreight', category: 'transportation', date: '2025-06-10', content: 'Explore my seamless experience with AmeriFreight’s door-to-door car shipping', image: '/seo-specialist/images/amerifreight-placeholder3.jpeg' },
-  { id: 4, title: 'My Thrilling Stars777 Online Gaming Experience | Seamless Fun in 2025', category: 'entertainment', date: '2025-06-10', content: 'Explore why Stars777 is 2025 top gaming platform—diverse games, secure payments, and stellar support all in one place!', image: '/seo-specialist/images/stars777-placeholder2.jpeg' },
-  { id: 5, title: 'My Home Transformation with Beyond Builders', category: 'construction', date: '2025-06-11', content: 'Discover how Beyond Builders transformed my home with expert construction and remodeling services in the Bay Area.', image: '/seo-specialist/images/beyond-builders-placeholder.jpeg' },
-  { id: 6, title: 'My Mental Wellness Journey with Mynd Works', category: 'health', date: '2025-06-12', content: 'My journey with Mynd Works Psychiatry: personalized mental health care with innovative treatments in Austin, TX.', image: '/seo-specialist/images/mynd-works-placeholder.jpeg' },
-  { id: 7, title: 'Healing with Integrative Psychiatry at Mynd Works', category: 'health', date: '2025-06-13', content: 'Explore integrative psychiatry at Mynd Works in Austin, TX—my journey to personalized mental health with science-backed care.', image: '/seo-specialist/images/mynd-works-integrative-placeholder.jpeg' },
-  { id: 8, title: 'My Journey with PhotoAndVideoEdits Real Estate Editing', category: 'real-estate', date: '2025-06-14', content: 'Discover my experience with PhotoAndVideoEdits real estate photo editing services—fast turnaround and stunning visuals in 2025.', image: '/seo-specialist/images/photoandvideoedits-placeholder.jpeg' },
-  { id: 9, title: 'Discovering Nashville with Experience Tours', category: 'travel', date: '2025-06-15', content: 'Explore my journey with Nashville Experience Tours—unique walking and van tours revealing Music City’s history in 2025.', image: '/seo-specialist/images/nashville-tours-placeholder.jpeg' },
-  { id: 10, title: 'Exploring Stars777 Slot Games', category: 'entertainment', date: '2025-06-16', content: 'My experience with Stars777 slot games—exciting gameplay and fast withdrawals in 2025.', image: '/seo-specialist/images/stars777-placeholder3.jpeg' },
-  { id: 11, title: 'My Adventure with Stars777 Casino Games', category: 'entertainment', date: '2025-06-16', content: 'My exciting journey with Stars777 online casino games—secure play and fun slots in 2025.', image: '/seo-specialist/images/stars777-casino-placeholder.jpeg' },
-  { id: 12, title: 'Navigating College Moves with AmeriFreight’s Student Discount', category: 'transportation', date: '2025-06-17', content: 'My experience with AmeriFreight’s student discount for car shipping—affordable and stress-free in 2025.', image: '/seo-specialist/images/amerifreight-student-placeholder.jpeg' },
-  { id: 13, title: 'Transforming Spaces with Go Beyond Builders’ Commercial Renovations', category: 'construction', date: '2025-06-17', content: 'My experience with Go Beyond Builders’ commercial renovations—expertise and stunning results in 2025.', image: '/seo-specialist/images/gobeyondbuilders-placeholder.jpeg' },
-  { id: 14, title: 'Elevating Content with Photo and Video Edits’ Video Editing Services', category: 'real-estate', date: '2025-06-18', content: 'Discover how Photo and Video Edits transformed my video content with professional editing services in 2025.', image: '/seo-specialist/images/photoandvideoedits2-placeholder.jpeg' }
-].sort((a, b) => new Date(b.date) - new Date(a.date));
+// Blog Data (Fetched from JSON)
+let blogs = [];
 
 const blogsPerPage = 20;
 let currentPage = 1;
@@ -40,6 +25,22 @@ for (let i = 0; i < 30; i++) {
   option.value = dateStr;
   option.textContent = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   dateFilter.appendChild(option);
+}
+
+async function fetchBlogs() {
+  try {
+    const response = await fetch('/seo-specialist/data/blogs.json'); // Adjust path as needed
+    if (!response.ok) throw new Error('Failed to fetch blogs');
+    blogs = await response.json();
+    // Sort blogs by date (newest first)
+    blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // Initialize display after fetching
+    displayBlogs(currentPage);
+  } catch (error) {
+    console.error('Error fetching blogs:', error);
+    noBlogsMessage.textContent = 'Error loading blogs. Please try again later.';
+    noBlogsMessage.style.display = 'block';
+  }
 }
 
 function displayBlogs(page, category = 'all', date = null) {
@@ -127,4 +128,5 @@ dateFilter.addEventListener('change', () => {
   displayBlogs(currentPage, categoryFilter.value, dateFilter.value);
 });
 
-displayBlogs(currentPage);
+// Fetch blogs and initialize
+fetchBlogs();
