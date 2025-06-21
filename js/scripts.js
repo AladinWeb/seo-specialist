@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   // Header Component
   const header = document.getElementById('header');
   header.innerHTML = `
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const footer = document.getElementById('footer');
   footer.innerHTML = `
     <div class="footer-content">
-      <p>&copy; ${new Date().getFullYear()} My Blog. All rights reserved.</p>
+      <p>© ${new Date().getFullYear()} My Blog. All rights reserved.</p>
       <ul class="footer-links">
         <li><a href="/seo-specialist/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
         <li><a href="/seo-specialist/terms-of-service.html" class="footer-link">Terms of Service</a></li>
@@ -55,4 +55,40 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.classList.remove('active');
     });
   });
+
+  // Fetch and display featured blogs
+  try {
+    const response = await fetch('/seo-specialist/data/blogs.json'); // Adjust path as needed
+    if (!response.ok) throw new Error('Failed to fetch blogs');
+    const blogs = await response.json();
+    // Sort blogs by date (newest first) and take the top 6
+    const latestBlogs = blogs
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 6);
+
+    // Get the blog grid container
+    const blogGrid = document.querySelector('.featured-blogs .blog-grid');
+    if (blogGrid) {
+      blogGrid.innerHTML = ''; // Clear existing static content
+      latestBlogs.forEach((blog, index) => {
+        const blogCard = document.createElement('div');
+        blogCard.className = 'blog-card animate-fadeIn';
+        blogCard.style.animationDelay = `${(5 - index) * 0.2}s`; // Reverse delay to match original
+        blogCard.innerHTML = `
+          <img src="${blog.image}" alt="Blog ${blog.id}">
+          <h3>${blog.title}</h3>
+          <p>${blog.content}</p>
+          <a href="/seo-specialist/blog/blog-post-${blog.id}.html" class="blog-link">Read More</a>
+        `;
+        blogGrid.appendChild(blogCard);
+      });
+    }
+  } catch (error) {
+    console.error('Error fetching featured blogs:', error);
+    // Optionally display an error message in the blog grid
+    const blogGrid = document.querySelector('.featured-blogs .blog-grid');
+    if (blogGrid) {
+      blogGrid.innerHTML = '<p>Error loading featured blogs. Please try again later.</p>';
+    }
+  }
 });
