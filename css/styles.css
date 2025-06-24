@@ -422,7 +422,7 @@ footer {
 
 .footer-link, .footer-content a {
   color: #ffffff !important;
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
