@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const footer = document.getElementById('footer');
   footer.innerHTML = `
     <div class="footer-content">
-      <p>© ${new Date().getFullYear()} My Blog. All rights reserved. Managed by <a href="https://allworldseodigitalmarketingsolutions.com/" target="_blank"><strong>AllWorld SEO</strong></a>.</p>
+      <p>© ${new Date().getFullYear()} Fuseven. All rights reserved. Managed by <a href="https://allworldseodigitalmarketingsolutions.com/" target="_blank"><strong>AllWorld SEO</strong></a>.</p>
       <ul class="footer-links">
         <li><a href="/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
         <li><a href="/terms-of-service.html" class="footer-link">Terms of Service</a></li>
