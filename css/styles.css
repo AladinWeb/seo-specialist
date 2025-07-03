@@ -489,7 +489,7 @@ footer {
 
 .about-us img {
     max-width: 800px;
-    width: 100px;
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 20px;
