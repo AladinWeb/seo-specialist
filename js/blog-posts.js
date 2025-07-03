@@ -4,7 +4,7 @@ let blogs = [];
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Fetch blog data
-    const response = await fetch('/seo-specialist/data/blogs.json'); // Adjust path as needed
+    const response = await fetch('/data/blogs.json'); // Adjust path as needed
     if (!response.ok) throw new Error('Failed to fetch blogs');
     blogs = await response.json();
     // Sort blogs by date (newest first)
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const count = blogs.filter(blog => blog.category === category).length;
       const listItem = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `/seo-specialist/blog.html`;
+      link.href = `/blog.html`;
       link.textContent = `${category} (${count})`;
       if (currentBlog && currentBlog.category === category) {
         link.classList.add('active');
