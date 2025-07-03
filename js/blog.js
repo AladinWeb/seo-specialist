@@ -9,8 +9,7 @@ const categoryFilter = document.getElementById('categoryFilter');
 const dateFilter = document.getElementById('dateFilter');
 const noBlogsMessage = document.getElementById('noBlogsMessage');
 
-// Populate Date Filter with "No Date" option and starting from today (July 03, 2025, 07:33 PM PST)
-const today = new Date('2025-07-03T19:33:00-07:00');
+const today = new Date('2025-06-08T19:33:00-07:00');
 const optionNoDate = document.createElement('option');
 optionNoDate.value = 'null';
 optionNoDate.textContent = 'No Date';
