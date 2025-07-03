@@ -73,19 +73,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       latestBlogs.forEach((blog, index) => {
         const blogCard = document.createElement('div');
         blogCard.className = 'blog-card animate-fadeIn';
-        blogCard.style.animationDelay = `${(5 - index) * 0.2}s`; // Reverse delay to match original
+        blogCard.style.animationDelay = `${(5 - index) * 0.2}s`;
         blogCard.innerHTML = `
-          <img src="${blog.image}" alt="Blog ${blog.id}">
+          <img src="${blog.image}" alt="${blog.title}">
           <h3>${blog.title}</h3>
           <p>${blog.content}</p>
-          <a href="/blog/blog-post-${blog.id}" class="blog-link">Read Full Blog</a>
+          <a href="/blog/${blog.slug}" class="blog-link">Read Full Blog</a>
         `;
         blogGrid.appendChild(blogCard);
       });
     }
   } catch (error) {
     console.error('Error fetching featured blogs:', error);
-    // Optionally display an error message in the blog grid
     const blogGrid = document.querySelector('.featured-blogs .blog-grid');
     if (blogGrid) {
       blogGrid.innerHTML = '<p>Error loading featured blogs. Please try again later.</p>';

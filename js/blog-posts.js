@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     sidebar.className = 'sidebar';
     document.querySelector('.blog-post').insertAdjacentElement('beforeend', sidebar);
 
-    // Determine current blog post ID from URL (e.g., /blog-post-1)
+    // Determine current blog post slug from URL (e.g., /blog/thrilling-stars777)
     const path = window.location.pathname;
-    const idMatch = path.match(/blog-post-(\d+)/); // Updated to match clean URLs
-    const currentId = idMatch ? parseInt(idMatch[1]) : null;
-    const currentBlog = blogs.find(blog => blog.id === currentId);
+    const slugMatch = path.match(/\/blog\/([^\/]+)/); // Match /blog/{slug}
+    const currentSlug = slugMatch ? slugMatch[1] : null;
+    const currentBlog = blogs.find(blog => blog.slug === currentSlug);
 
     // Table of Contents
     const tocSection = document.createElement('div');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     latestPosts.forEach(blog => {
       const listItem = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `/blog-post-${blog.id}`; // Removed .html
+      link.href = `/blog/${blog.slug}`;
       link.textContent = blog.title;
       link.setAttribute('title', `Read more about ${blog.title}`); // Added for accessibility/SEO
       listItem.appendChild(link);
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const count = blogs.filter(blog => blog.category === category).length;
       const listItem = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `/blog?category=${encodeURIComponent(category)}`; // Updated to filter by category
+      link.href = `/blog?category=${encodeURIComponent(category)}`;
       link.textContent = `${category} (${count})`;
       if (currentBlog && currentBlog.category === category) {
         link.classList.add('active');

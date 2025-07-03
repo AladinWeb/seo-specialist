@@ -9,8 +9,8 @@ const categoryFilter = document.getElementById('categoryFilter');
 const dateFilter = document.getElementById('dateFilter');
 const noBlogsMessage = document.getElementById('noBlogsMessage');
 
-// Populate Date Filter with "No Date" option and starting from today (June 07, 2025, 07:36 PM PST)
-const today = new Date('2025-06-07T19:36:00-07:00');
+// Populate Date Filter with "No Date" option and starting from today (July 03, 2025, 07:33 PM PST)
+const today = new Date('2025-07-03T19:33:00-07:00');
 const optionNoDate = document.createElement('option');
 optionNoDate.value = 'null';
 optionNoDate.textContent = 'No Date';
@@ -70,7 +70,7 @@ function displayBlogs(page, category = 'all', date = null) {
       <img src="${blog.image}" alt="${blog.title}">
       <h3>${blog.title}</h3>
       <p>${blog.content}</p>
-      <a href="/blog/blog-post-${blog.id}" class="blog-link">Read Full Blog</a>
+      <a href="/blog/${blog.slug}" class="blog-link">Read Full Blog</a>
     `;
     blogGrid.appendChild(blogCard);
   });
