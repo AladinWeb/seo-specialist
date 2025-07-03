@@ -9,7 +9,7 @@ const categoryFilter = document.getElementById('categoryFilter');
 const dateFilter = document.getElementById('dateFilter');
 const noBlogsMessage = document.getElementById('noBlogsMessage');
 
-const today = new Date('2025-06-08T19:33:00-07:00');
+const today = new Date('2025-06-07T19:33:00-07:00');
 const optionNoDate = document.createElement('option');
 optionNoDate.value = 'null';
 optionNoDate.textContent = 'No Date';
