@@ -29,7 +29,7 @@ for (let i = 0; i < 30; i++) {
 
 async function fetchBlogs() {
   try {
-    const response = await fetch('data/blogs.json'); // Adjust path as needed
+    const response = await fetch('/data/blogs.json'); // Adjust path as needed
     if (!response.ok) throw new Error('Failed to fetch blogs');
     blogs = await response.json();
     // Sort blogs by date (newest first)
@@ -70,7 +70,7 @@ function displayBlogs(page, category = 'all', date = null) {
       <img src="${blog.image}" alt="${blog.title}">
       <h3>${blog.title}</h3>
       <p>${blog.content}</p>
-      <a href="/blog/blog-post-${blog.id}.html" class="blog-link">Read More</a>
+      <a href="/blog/blog-post-${blog.id}.html" class="blog-link">Read Full Blog</a>
     `;
     blogGrid.appendChild(blogCard);
   });

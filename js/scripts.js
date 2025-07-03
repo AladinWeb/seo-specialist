@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <img src="${blog.image}" alt="Blog ${blog.id}">
           <h3>${blog.title}</h3>
           <p>${blog.content}</p>
-          <a href="/blog/blog-post-${blog.id}.html" class="blog-link">Read More</a>
+          <a href="/blog/blog-post-${blog.id}.html" class="blog-link">Read Full Blog</a>
         `;
         blogGrid.appendChild(blogCard);
       });
