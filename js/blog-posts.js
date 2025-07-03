@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     sidebar.className = 'sidebar';
     document.querySelector('.blog-post').insertAdjacentElement('beforeend', sidebar);
 
-    // Determine current blog post ID from URL (e.g., blog-post-1.html)
+    // Determine current blog post ID from URL (e.g., /blog-post-1)
     const path = window.location.pathname;
-    const idMatch = path.match(/blog-post-(\d+)\.html/);
+    const idMatch = path.match(/blog-post-(\d+)/); // Updated to match clean URLs
     const currentId = idMatch ? parseInt(idMatch[1]) : null;
     const currentBlog = blogs.find(blog => blog.id === currentId);
 
@@ -66,8 +66,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     latestPosts.forEach(blog => {
       const listItem = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `blog-post-${blog.id}.html`;
+      link.href = `/blog-post-${blog.id}`; // Removed .html
       link.textContent = blog.title;
+      link.setAttribute('title', `Read more about ${blog.title}`); // Added for accessibility/SEO
       listItem.appendChild(link);
       latestList.appendChild(listItem);
     });
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const categorySection = document.createElement('div');
     categorySection.className = 'category-section';
     const categoryHeading = document.createElement('h3');
-    categoryHeading.textContent = 'Blog Category';
+    categoryHeading.textContent = 'Blog Categories';
     categorySection.appendChild(categoryHeading);
     const categoryList = document.createElement('ul');
     categoryList.className = 'category-list';
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const count = blogs.filter(blog => blog.category === category).length;
       const listItem = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `/blog.html`;
+      link.href = `/blog?category=${encodeURIComponent(category)}`; // Updated to filter by category
       link.textContent = `${category} (${count})`;
       if (currentBlog && currentBlog.category === category) {
         link.classList.add('active');
@@ -97,12 +98,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
     categorySection.appendChild(categoryList);
     sidebar.appendChild(categorySection);
+
+    // Clean up .html in URL (for GitHub Pages compatibility)
+    if (window.location.pathname.endsWith('.html')) {
+      history.replaceState(null, '', window.location.pathname.replace('.html', ''));
+    }
   } catch (error) {
     console.error('Error fetching blogs:', error);
-    // Optionally display an error message in the sidebar
     const sidebar = document.createElement('div');
     sidebar.className = 'sidebar';
-    sidebar.innerHTML = '<p>Error loading sidebar content. Please try again later.</p>';
+    sidebar.innerHTML = '<p>Error loading blog content. Please <a href="/contact">contact us</a> for assistance.</p>';
     document.querySelector('.blog-post').insertAdjacentElement('beforeend', sidebar);
   }
 });

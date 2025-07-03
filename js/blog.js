@@ -70,7 +70,7 @@ function displayBlogs(page, category = 'all', date = null) {
       <img src="${blog.image}" alt="${blog.title}">
       <h3>${blog.title}</h3>
       <p>${blog.content}</p>
-      <a href="/blog/blog-post-${blog.id}.html" class="blog-link">Read Full Blog</a>
+      <a href="/blog/blog-post-${blog.id}" class="blog-link">Read Full Blog</a>
     `;
     blogGrid.appendChild(blogCard);
   });

@@ -11,17 +11,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>
       <ul class="nav-links">
         <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/about-us.html" class="nav-link">About</a></li>
-        <li><a href="/blog.html" class="nav-link">Blog</a></li>
-        <li><a href="/contact-us.html" class="nav-link">Contact</a></li>
+        <li><a href="/about-us" class="nav-link">About</a></li>
+        <li><a href="/blog" class="nav-link">Blog</a></li>
+        <li><a href="/contact-us" class="nav-link">Contact</a></li>
       </ul>
     </nav>
     <div class="mobile-menu">
       <ul>
         <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/about-us.html" class="nav-link">About</a></li>
-        <li><a href="/blog.html" class="nav-link">Blog</a></li>
-        <li><a href="/contact-us.html" class="nav-link">Contact</a></li>
+        <li><a href="/about-us" class="nav-link">About</a></li>
+        <li><a href="/blog" class="nav-link">Blog</a></li>
+        <li><a href="/contact-us" class="nav-link">Contact</a></li>
       </ul>
     </div>
   `;
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     <div class="footer-content">
       <p>© ${new Date().getFullYear()} Fuseven. All rights reserved. Managed by <a href="https://allworldseodigitalmarketingsolutions.com/" target="_blank"><strong>AllWorld SEO</strong></a>.</p>
       <ul class="footer-links">
-        <li><a href="/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
-        <li><a href="/terms-of-service.html" class="footer-link">Terms of Service</a></li>
-        <li><a href="/contact-us.html" class="footer-link">Contact Us</a></li>
+        <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+        <li><a href="/terms-of-service" class="footer-link">Terms of Service</a></li>
+        <li><a href="/contact-us" class="footer-link">Contact Us</a></li>
       </ul>
     </div>
   `;
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <img src="${blog.image}" alt="Blog ${blog.id}">
           <h3>${blog.title}</h3>
           <p>${blog.content}</p>
-          <a href="/blog/blog-post-${blog.id}.html" class="blog-link">Read Full Blog</a>
+          <a href="/blog/blog-post-${blog.id}" class="blog-link">Read Full Blog</a>
         `;
         blogGrid.appendChild(blogCard);
       });
