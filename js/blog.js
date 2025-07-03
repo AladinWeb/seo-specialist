@@ -29,7 +29,7 @@ for (let i = 0; i < 30; i++) {
 
 async function fetchBlogs() {
   try {
-    const response = await fetch('/data/blogs.json'); // Adjust path as needed
+    const response = await fetch('data/blogs.json'); // Adjust path as needed
     if (!response.ok) throw new Error('Failed to fetch blogs');
     blogs = await response.json();
     // Sort blogs by date (newest first)
