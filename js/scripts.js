@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Fetch and display featured blogs
   try {
-    const response = await fetch('/seo-specialist/data/blogs.json'); // Adjust path as needed
+    const response = await fetch('/data/blogs.json'); // Adjust path as needed
     if (!response.ok) throw new Error('Failed to fetch blogs');
     const blogs = await response.json();
     // Sort blogs by date (newest first) and take the top 6
