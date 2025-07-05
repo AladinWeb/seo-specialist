@@ -19,7 +19,7 @@
   <header id="header" class="sticky-header"></header>
   <div class="contact-us">
     <h1>Contact Fuseven</h1>
-    <p>We’re here to help your business grow with expert digital marketing and web development services in Bulacan. Whether you have questions, need a quote, or want to collaborate, reach out via our form, email, or phone. Our team is ready to assist you!</p>
+    <p>We’re here to help your business grow with expert digital marketing and web development services. Whether you have questions, need a quote, or want to collaborate, reach out via our form, email, or phone. Our team is ready to assist you!</p>
 
     <div class="contact-info">
       <h2>Contact Information</h2>
@@ -30,7 +30,7 @@
 
     <div class="contact-form">
       <h2>Send Us a Message</h2>
-      <form id="contactForm" onsubmit="handleSubmit(event)">
+      <form id="contactForm">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br>
         <label for="email">Email:</label><br>
@@ -50,24 +50,42 @@
 
     <p>Ready to boost your online presence? Contact Fuseven today via <a href="mailto:connected@allworldseodigitalmarketingsolutions.com">connected@allworldseodigitalmarketingsolutions.com</a> or visit us in Bulacan. We’re here to support your digital goals!</p>
   </div>
-  
-  <footer id="footer"></footer>
-  <script src="/js/scripts.js"></script>
-  <script>
-    function handleSubmit(event) {
-      event.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
 
-      if (name && email && subject && message) {
-        alert('Thank you, ' + name + '! Your message has been submitted. We’ll get back to you soon.');
+<footer id="footer"></footer>
+<script src="/js/scripts.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+  })();
+
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    if (name && email && subject && message) {
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        reply_to: email
+      })
+      .then(function(response) {
+        alert('Thank you, ' + name + '! Your message has been sent successfully. We’ll get back to you soon.');
         document.getElementById('contactForm').reset();
-      } else {
-        alert('Please fill out all fields before submitting.');
-      }
+      }, function(error) {
+        alert('Failed to send the message. Please try again or contact us directly at connected@allworldseodigitalmarketingsolutions.com.');
+        console.error('EmailJS error:', error);
+      });
+    } else {
+      alert('Please fill out all fields before submitting.');
     }
-  </script>
+  });
+</script>
 </body>
 </html>
