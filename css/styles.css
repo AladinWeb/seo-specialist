@@ -497,13 +497,13 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.about-us a, .contact-info a, .privacy-policy a, .terms-of-service a, .map-section a {
+.about-us a, .contact-info a, .privacy-policy a, .terms-of-service a, map-section a {
     color: #ff69b4;
     text-decoration: none;
     font-weight: bold;
 }
 
-.about-us a:hover, .contact-info a:hover, .privacy-policy a:hover, .terms-of-service a:hover, .map-section a:hover {
+.about-us a:hover, .contact-info a:hover, .privacy-policy a:hover, .terms-of-service a:hover, map-section a:hover {
     text-decoration: underline;
 }
 
