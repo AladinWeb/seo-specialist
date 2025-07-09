@@ -44,120 +44,6 @@ main {
   animation: fadeIn 1s ease-out forwards;
 }
 
-/* Header Styles */
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.header-nav {
-  background: linear-gradient(135deg, #1e3a8a, #ec4899, #8b5cf6);
-  color: #ffffff;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff;
-  transition: color 0.3s ease;
-}
-
-.logo-title:hover {
-  color: #ec4899;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 16px;
-}
-
-.nav-link {
-  position: relative;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 4px 8px;
-  border-radius: 4px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #ec4899;
-  transition: width 0.5s ease;
-}
-
-.nav-link:hover {
-  color: #ec4899;
-  background-color: rgba(255, 255, 255, 0.938);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff;
-  transition: all 0.3s ease;
-}
-
-.hamburger.active .line1 {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active .line2 {
-  opacity: 0;
-}
-
-.hamburger.active .line3 {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.mobile-menu {
-  display: none;
-  background: linear-gradient(135deg, #1e3a8a, #ec4899, #8b5cf6);
-  padding: 16px;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-}
-
-.mobile-menu.active {
-  display: block;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.mobile-menu .nav-link {
-  display: block;
-  padding: 8px;
-}
-
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -394,43 +280,7 @@ main {
   color: #ffffff;
 }
 
-/* Footer Styles */
-footer {
-  background: linear-gradient(135deg, #1e3a8a, #ec4899, #8b5cf6, black);
-  color: #d1d5db;
-  padding: 16px;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-content p {
-  color: #ffffff !important;
-  margin-bottom: 8px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.footer-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-
-.footer-link, .footer-content a {
-  color: #ffffff !important;
-  text-decoration: underline;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.footer-link:hover {
-  color: #ec4899;
-  transform: translateY(-2px);
-}
-
+/* Content Pages */
 .about-us, .contact-us, .privacy-policy, .terms-of-service {
     position: relative;
     padding: 40px 20px;
@@ -454,7 +304,7 @@ footer {
     text-align: center;
 }
 
-.about-us h2, .contact-info h2, .contact-info h2, .contact-form h2, .map-section h2, .privacy-policy h2, .terms-of-service h2{
+.about-us h2, .contact-info h2, .contact-form h2, .map-section h2, .privacy-policy h2, .terms-of-service h2 {
     font-size: 1.8em;
     color: #111;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
@@ -561,18 +411,18 @@ footer {
 }
 
 .contact-form button {
-    background: #ff69b4;
-    color: #111;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.3s;
+  background: #ff69b4;
+  color: #111;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
-    background: #ff69b4;
+  background: #ff69b4;
 }
 
 /* Map Section Styling */
@@ -601,19 +451,10 @@ footer {
   .hero-content p {
     font-size: 1.25rem;
   }
-  .nav-links {
-    display: flex;
-  }
 }
 
 @media (max-width: 639px) {
   .category-grid {
     grid-template-columns: 1fr;
-  }
-  .nav-links {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
   }
 }
