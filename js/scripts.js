@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <span style="color: #ffffff; font-size: 1.3rem; margin-bottom: 1rem; display: block;">Additional Links</span>
             <ul style="list-style: none; padding: 0;">
               <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
-              <li><a href="/terms" class="footer-link">Terms of Service</a></li>
+              <li><a href="/terms-of-service" class="footer-link">Terms of Service</a></li>
               <li><a href="/faq" class="footer-link">FAQ</a></li>
             </ul>
           </div>
