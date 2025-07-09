@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             <a href="mailto:info@fuseven.com">info@fuseven.com</a>
           </div>
           <div class="subheader-social">
-            <a href="#" target="_blank" class="fab fa-facebook-f"></a>
-            <a href="#" target="_blank" class="fab fa-x-twitter"></a>
-            <a href="#" target="_blank" class="fab fa-instagram"></a>
-            <a href="#" target="_blank" class="fab fa-linkedin-in"></a>
+            <a href="https://www.facebook.com/allworldseodigitalmarketingsolutions/" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="https://x.com/AllWorldSEOPH" target="_blank" class="fab fa-x-twitter"></a>
+            <a href="https://www.instagram.com/allworldseoph/" target="_blank" class="fab fa-instagram"></a>
+            <a href="https://www.linkedin.com/company/allworld-seo-digital-marketing-solutions/" target="_blank" class="fab fa-linkedin-in"></a>
           </div>
         </div>
         <nav class="header-nav">
@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', async () => {
               <a href="/" class="footer-logo" style="background: url('/images/fuseven-logo.png') no-repeat center; width: 150px; height: 50px; background-size: contain; text-indent: -9999px;"></a>
             </div>
             <div class="footer-social">
-              <a href="#" target="_blank" class="fab fa-facebook-f"></a>
-              <a href="#" target="_blank" class="fab fa-x-twitter"></a>
-              <a href="#" target="_blank" class="fab fa-instagram"></a>
-              <a href="#" target="_blank" class="fab fa-linkedin-in"></a>
+              <a href="https://www.facebook.com/allworldseodigitalmarketingsolutions/" target="_blank" class="fab fa-facebook-f"></a>
+              <a href="https://x.com/AllWorldSEOPH" target="_blank" class="fab fa-x-twitter"></a>
+              <a href="https://www.instagram.com/allworldseoph/" target="_blank" class="fab fa-instagram"></a>
+              <a href="https://www.linkedin.com/company/allworld-seo-digital-marketing-solutions/" target="_blank" class="fab fa-linkedin-in"></a>
             </div>
             <p id="site-description" class="site-description">Fuseseven is your go-to platform for innovative digital solutions and creative services. Managed by AllWorld SEO, our Bulacan-based team supports clients locally and internationally.</p>
           </div>
