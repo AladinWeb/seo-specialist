@@ -27,7 +27,7 @@ body::before {
 main {
   padding: 16px 16px 32px;
   min-height: calc(100vh - 60px);
-  padding-top: 140px;
+  padding-top: 130px;
 }
 
 /* Animations */
