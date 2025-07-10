@@ -31,7 +31,7 @@ header.sticky-header {
 .blog-post h1,
 .blog-post h2,
 .blog-post h3 {
-    scroll-margin-top: 70px; /* Offset to account for sticky header + padding, adjust as needed */
+    scroll-margin-top: 110px; /* Offset to account for sticky header + padding, adjust as needed */
 }
 
 .blog-post img {
