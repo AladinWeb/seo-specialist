@@ -1,4 +1,3 @@
-// Blog Data (Fetched from JSON)
 let blogs = [];
 
 const blogsPerPage = 20;
@@ -9,31 +8,30 @@ const categoryFilter = document.getElementById('categoryFilter');
 const dateFilter = document.getElementById('dateFilter');
 const noBlogsMessage = document.getElementById('noBlogsMessage');
 
-const today = new Date('2025-06-07T19:33:00-07:00');
+// Populate date filter with month/year options starting from June 2025
+const startDate = new Date('2025-06-01');
 const optionNoDate = document.createElement('option');
 optionNoDate.value = 'null';
 optionNoDate.textContent = 'No Date';
 optionNoDate.selected = true;
 dateFilter.appendChild(optionNoDate);
 
-for (let i = 0; i < 30; i++) {
-  const date = new Date(today);
-  date.setDate(today.getDate() + i);
-  const dateStr = date.toISOString().split('T')[0];
+for (let i = 0; i < 24; i++) { // Generate 2 years of months
+  const date = new Date(startDate);
+  date.setMonth(startDate.getMonth() + i);
+  const yearMonth = date.toISOString().slice(0, 7); // YYYY-MM
   const option = document.createElement('option');
-  option.value = dateStr;
-  option.textContent = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  option.value = yearMonth;
+  option.textContent = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
   dateFilter.appendChild(option);
 }
 
 async function fetchBlogs() {
   try {
-    const response = await fetch('/data/blogs.json'); // Adjust path as needed
+    const response = await fetch('/data/blogs.json');
     if (!response.ok) throw new Error('Failed to fetch blogs');
     blogs = await response.json();
-    // Sort blogs by date (newest first)
     blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
-    // Initialize display after fetching
     displayBlogs(currentPage);
   } catch (error) {
     console.error('Error fetching blogs:', error);
@@ -47,7 +45,8 @@ function displayBlogs(page, category = 'all', date = null) {
   noBlogsMessage.style.display = 'none';
   let filteredBlogs = blogs.filter(blog => {
     const matchesCategory = category === 'all' || blog.category === category;
-    const matchesDate = !date || date === 'null' || blog.date === date;
+    const blogYearMonth = blog.date.slice(0, 7); // Extract YYYY-MM from blog date
+    const matchesDate = !date || date === 'null' || blogYearMonth === date;
     return matchesCategory && matchesDate;
   });
 
@@ -127,5 +126,4 @@ dateFilter.addEventListener('change', () => {
   displayBlogs(currentPage, categoryFilter.value, dateFilter.value);
 });
 
-// Fetch blogs and initialize
 fetchBlogs();
