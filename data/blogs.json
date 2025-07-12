@@ -238,5 +238,21 @@
     "date": "2025-07-04",
     "content": "Shipping my Harley-Davidson with AmeriFreight’s reliable motorcycle transport services for enthusiasts in 2025.",
     "image": "/images/amerifreight-motorcycle-placeholder.webp"
+  },
+  {
+    "title": "Chasing Spirits with Nashville Experience Tours’ Ghouls, Ghosts, and Goblins | 2025",
+    "slug": "nashville-ghost-tour",
+    "category": "travel",
+    "date": "2025-07-05",
+    "content": "Exploring Nashville’s spooky side with Nashville Experience Tours’ Ghouls, Ghosts, and Goblins tour in 2025.",
+    "image": "/images/nashville-ghost-tour-placeholder.webp"
+  },
+  {
+    "title": "Festive Fun with Nashville Experience Tours’ Joe’s Top Picks Holiday Tour | 2025",
+    "slug": "nashville-holiday-tour",
+    "category": "travel",
+    "date": "2025-07-06",
+    "content": "Celebrating the 2025 holidays in Nashville with Nashville Experience Tours’ Joe’s Top Picks tour, filled with festive cheer and Music City magic.",
+    "image": "/images/nashville-holiday-tour-placeholder.webp"
   }
 ]
