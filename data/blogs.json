@@ -254,5 +254,21 @@
     "date": "2025-07-06",
     "content": "Celebrating the 2025 holidays in Nashville with Nashville Experience Tours’ Joe’s Top Picks tour, filled with festive cheer and Music City magic.",
     "image": "/images/nashville-holiday-tour-placeholder.webp"
+  },
+  {
+    "title": "Shipping My Luxury SUV with AmeriFreight’s Expert Guide | 2025",
+    "slug": "amerifreight-luxury-suv",
+    "category": "transportation",
+    "date": "2025-07-07",
+    "content": "Shipping my Cadillac Escalade with AmeriFreight and exploring their guide to the best luxury SUVs for 2025.",
+    "image": "/images/amerifreight-luxury-suv-placeholder.webp"
+  },
+  {
+    "title": "Shipping My Electric Car with AmeriFreight’s Affordable EV Guide | 2025",
+    "slug": "amerifreight-electric-car",
+    "category": "transportation",
+    "date": "2025-07-08",
+    "content": "Shipping my Nissan Leaf with AmeriFreight and exploring their guide to the most affordable electric cars for 2025.",
+    "image": "/images/amerifreight-electric-car-placeholder.webp"
   }
 ]
