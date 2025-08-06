@@ -142,7 +142,7 @@ main {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin-top: 24px;
 }
@@ -168,7 +168,7 @@ main {
 
 .service-card p {
   font-size: 1em;
-  color: #4b5563;
+  color: #222222;
   margin-bottom: 0;
 }
 
@@ -280,10 +280,20 @@ main {
 
 .featured-blogs p {
   font-size: 1.125rem;
-  color: #ffffff; /* White for simple text */
-  margin-bottom: 40px; /* Increased spacing from cards */
-  text-align: center;
+  color: #ffffff;
+  margin-bottom: 40px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.featured-blogs a {
+  color: #ffffff; /* White for links */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.featured-blogs a:hover {
+  color: #ec4899; /* Pink on hover */
 }
 
 .blog-grid {
@@ -320,7 +330,7 @@ main {
 }
 
 .blog-card p {
-  color: #4b5563;
+  color: #222222;
   margin-bottom: 16px;
 }
 
@@ -559,4 +569,5 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
 
