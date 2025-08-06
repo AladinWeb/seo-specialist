@@ -286,14 +286,9 @@ main {
 }
 
 .featured-blogs a {
-  color: #ffffff; /* White for links */
+  color: #ec4899; /* White for links */
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.featured-blogs a:hover {
-  color: #ec4899; /* Pink on hover */
 }
 
 .blog-grid {
@@ -569,5 +564,6 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
 
 
