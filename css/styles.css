@@ -373,7 +373,7 @@ main {
 .cta-content a {
   color: #ffffff; /* White for links */
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .cta-button {
@@ -570,6 +570,7 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
