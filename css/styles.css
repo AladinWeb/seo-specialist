@@ -285,7 +285,7 @@ main {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.featured-blogs a, .cta-content a {
+.featured-blogs a {
   color: #ec4899; /* White for links */
   font-weight: 600;
   text-decoration: none;
@@ -368,6 +368,12 @@ main {
   font-size: 1.125rem;
   color: #ffffff !important;
   margin-bottom: 24px;
+}
+
+.cta-content a {
+  color: #ffffff; /* White for links */
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .cta-button {
@@ -564,6 +570,7 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
