@@ -162,12 +162,12 @@
 <body>
   <header id="header" class="sticky-header"></header>
   <main>
-    <div class="blog-post">
+    <div class="blog-post" vocab="https://schema.org/" typeof="Article">
       <div class="featured-image-container">
         <img src="/images/washington-national-parks-placeholder.webp" alt="Washington National Parks Scenic View" class="featured-image">
       </div>
-      <div class="author">By Olivia Grant | 03:28 PM PST, August 18, 2025</div>
-      <h1>Discover Washington’s Must-See National Parks</h1>
+      <div class="author">By Olivia Grant | 03:42 PM PST, August 18, 2025</div>
+      <h1 property="headline">Discover Washington’s Must-See National Parks</h1>
       <p>My friends and I had been dreaming about an epic road trip through Washington’s stunning national parks for months, and when we finally decided to make it happen in 2025, a comprehensive guide became our ultimate roadmap. This guide covers the lush landscapes of Olympic National Park, the majestic peaks of Mount Rainier, and the rugged wilderness of North Cascades, including tips on spotting wildlife and avoiding peak crowds. It made our 2025 adventure unforgettable.</p>
       <p>The guide included sustainable travel practices like leave-no-trace principles and eco-friendly packing lists, aligning with our commitment to preserving these natural wonders.</p>
       <p>We appreciated budget breakdowns, from park entry fees to camping costs, helping us plan a cost-effective trip.</p>
@@ -286,10 +286,65 @@
       <p>Events foster loyalty.</p>
       <p>Expansion signals ambitions. <a href="#" onclick="showPopup('', 'Continued Excellence')">Sources</a></p>
 
-      <p>As of 03:28 PM PST, August 18, 2025, we had an amazing time exploring Washington’s parks thanks to the guide. Ready for your adventure? Start planning here: <a href="#" onclick="showPopup('', 'Discover Washington’s Must-See National Parks')">Sources</a></p>
+      <p>As of 03:42 PM PST, August 18, 2025, we had an amazing time exploring Washington’s parks thanks to the guide. Ready for your adventure? Start planning here: <a href="#" onclick="showPopup('', 'Discover Washington’s Must-See National Parks')">Sources</a></p>
       <p>Check blogs for more inspiration.</p>
       <p>Join newsletters for updates.</p>
       <p>Follow social media for updates.</p>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Discover Washington’s Must-See National Parks | 2025",
+          "description": "Explore Washington’s must-see national parks in 2025, offering tips on Olympic, Mount Rainier, and North Cascades for unforgettable adventures.",
+          "author": {
+            "@type": "Person",
+            "name": "Olivia Grant"
+          },
+          "datePublished": "2025-08-18T15:42:00-07:00",
+          "dateModified": "2025-08-18T15:42:00-07:00",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://fuseven.net/blog/washington-national-parks-2025"
+          },
+          "image": "https://fuseven.net/images/washington-national-parks-placeholder.webp",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Fuseven",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://fuseven.net/images/logo.png"
+            }
+          },
+          "citation": [
+            {
+              "@type": "WebPage",
+              "url": "https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=must-see+national+parks+in+washington",
+              "name": "An Amazing In-Depth Guide to the National Parks in Washington State"
+            },
+            {
+              "@type": "WebPage",
+              "url": "https://morethanjustparks.com/washington-national-parks/?q=must-see+national+parks+in+washington",
+              "name": "Washington's National Parks Ranked Best in the World"
+            },
+            {
+              "@type": "WebPage",
+              "url": "https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=must-see+national+parks+in+washington",
+              "name": "THE 15 BEST Washington National Parks"
+            },
+            {
+              "@type": "WebPage",
+              "url": "https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=must-see+national+parks+in+washington",
+              "name": "Washington National Parks: Travel Guide & Itinerary"
+            },
+            {
+              "@type": "WebPage",
+              "url": "https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=must-see+national+parks+in+washington",
+              "name": "The BEST Washington (State) National parks 2025"
+            }
+          ]
+        }
+      </script>
     </div>
   </main>
   <footer id="footer"></footer>
@@ -513,6 +568,14 @@
       document.getElementById('popupContent').innerHTML = '';
       document.getElementById('sourceList').innerHTML = '';
     }
+
+    // Close popup when clicking outside
+    document.addEventListener('click', function(event) {
+      const popup = document.getElementById('sidebarPopup');
+      if (!popup.contains(event.target) && popup.classList.contains('active')) {
+        hidePopup();
+      }
+    });
   </script>
   <script src="/js/blog-posts.js"></script>
   <script src="/js/scripts.js"></script>
