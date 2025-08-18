@@ -73,16 +73,20 @@
       margin-bottom: 15px;
       line-height: 1.5;
     }
-    .popup-iframe {
-      width: 100%;
-      height: 60vh;
-      min-height: 300px;
-      border: 2px solid #333;
-      border-radius: 8px;
-      margin-top: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      background-color: #f5f5f5;
-      clip-path: inset(100px 0 0 0);
+    .source-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .source-list li {
+      margin-bottom: 10px;
+    }
+    .source-list a {
+      color: #007bff;
+      text-decoration: none;
+      display: block;
+    }
+    .source-list a:hover {
+      text-decoration: underline;
     }
     @media (max-width: 600px) {
       .sidebar-popup {
@@ -96,11 +100,6 @@
         margin-top: 30px;
         font-size: 14px;
       }
-      .popup-iframe {
-        height: 50vh;
-        min-height: 250px;
-        clip-path: inset(80px 0 0 0);
-      }
     }
   </style>
 </head>
@@ -111,128 +110,128 @@
       <img src="/images/washington-national-parks-placeholder.webp" alt="Washington National Parks Guide">
       <div class="author">By Olivia Grant | 02:52 PM PST, August 18, 2025</div>
       <h1>Discover Washington’s Must-See National Parks</h1>
-      <p>My friends and I had been dreaming about an epic road trip through Washington’s stunning national parks for months, and when we finally decided to make it happen in 2025, a comprehensive guide became our ultimate roadmap. This guide covers the lush landscapes of Olympic National Park, the majestic peaks of Mount Rainier, and the rugged wilderness of North Cascades, including tips on spotting wildlife and avoiding peak crowds. It made our 2025 adventure unforgettable. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=must-see+national+parks+in+washington', 'Plan your visit to Washington’s national parks with official resources.')">https://www.nps.gov/state/wa/index.htm?q=must-see+national+parks+in+washington</a></p>
-      <p>The guide included sustainable travel practices like leave-no-trace principles and eco-friendly packing lists, aligning with our commitment to preserving these natural wonders. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=sustainable+travel', 'Discover eco-friendly travel tips for national parks.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=sustainable+travel</a></p>
-      <p>We appreciated budget breakdowns, from park entry fees to camping costs, helping us plan a cost-effective trip. <a href="#" onclick="showPopup('https://www.recreation.gov/search?q=Washington+National+Parks', 'Check out fee details and camping options.')">https://www.recreation.gov/search?q=Washington+National+Parks</a></p>
-      <p>Interactive maps and checklists ensured we didn’t miss key attractions or forget gear. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=interactive+maps', 'Explore interactive maps and checklists.')">https://morethanjustparks.com/washington-national-parks/?q=interactive+maps</a></p>
+      <p>My friends and I had been dreaming about an epic road trip through Washington’s stunning national parks for months, and when we finally decided to make it happen in 2025, a comprehensive guide became our ultimate roadmap. This guide covers the lush landscapes of Olympic National Park, the majestic peaks of Mount Rainier, and the rugged wilderness of North Cascades, including tips on spotting wildlife and avoiding peak crowds. It made our 2025 adventure unforgettable.</p>
+      <p>The guide included sustainable travel practices like leave-no-trace principles and eco-friendly packing lists, aligning with our commitment to preserving these natural wonders.</p>
+      <p>We appreciated budget breakdowns, from park entry fees to camping costs, helping us plan a cost-effective trip.</p>
+      <p>Interactive maps and checklists ensured we didn’t miss key attractions or forget gear. <a href="#" onclick="showPopup('', 'Discover Washington’s Must-See National Parks')">Sources</a></p>
 
       <h2>Why We Chose This Guide</h2>
-      <p>The guide impressed us with detailed breakdowns of each national park, supported by visitor statistics like Olympic’s 2.9 million visitors in 2023. It helped us spot elk in the Hoh Rainforest, a magical experience. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=visitor+statistics', 'View visitor statistics for Washington parks.')">https://morethanjustparks.com/washington-national-parks/?q=visitor+statistics</a></p>
-      <p>It emphasized family-friendly activities, including kid-approved hikes and ranger programs that kept our group engaged. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=family+activities', 'Find family-friendly activities.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=family+activities</a></p>
-      <p>The guide’s integration with official resources saved us time for exploration. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=planning+resources', 'Access official planning resources.')">https://www.nps.gov/state/wa/index.htm?q=planning+resources</a></p>
-      <p>It provided insights into local dining options with farm-to-table menus. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=local+dining', 'Explore local dining options.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=local+dining</a></p>
+      <p>The guide impressed us with detailed breakdowns of each national park, supported by visitor statistics like Olympic’s 2.9 million visitors in 2023. It helped us spot elk in the Hoh Rainforest, a magical experience.</p>
+      <p>It emphasized family-friendly activities, including kid-approved hikes and ranger programs that kept our group engaged.</p>
+      <p>The guide’s integration with official resources saved us time for exploration.</p>
+      <p>It provided insights into local dining options with farm-to-table menus. <a href="#" onclick="showPopup('', 'Why We Chose This Guide')">Sources</a></p>
 
       <h2>Key Features of the National Parks Guide</h2>
-      <p>The guide made our trip smooth and memorable, turning it into a joyous adventure. It included seasonal calendars for optimal visit timing. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=seasonal+calendars', 'Check seasonal calendars for visit timing.')">https://morethanjustparks.com/washington-national-parks/?q=seasonal+calendars</a></p>
-      <p>Emergency contacts and safety protocols gave us confidence in remote areas. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=safety+protocols', 'Learn safety protocols for remote areas.')">https://www.nps.gov/state/wa/index.htm?q=safety+protocols</a></p>
+      <p>The guide made our trip smooth and memorable, turning it into a joyous adventure. It included seasonal calendars for optimal visit timing.</p>
+      <p>Emergency contacts and safety protocols gave us confidence in remote areas. <a href="#" onclick="showPopup('', 'Key Features of the National Parks Guide')">Sources</a></p>
 
       <h3>Diverse Park Experiences</h3>
-      <p>Olympic National Park’s rainforests and coastlines were highlights, with trails like Hall of Mosses offering scenery for a $30 fee. Mount Rainier’s Skyline Trail showed vibrant wildflowers. North Cascades’ glaciers and meadows catered to all adventurers. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=park+experiences', 'Discover diverse park experiences.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=park+experiences</a></p>
-      <p>We explored North Cascades’ Cascade Pass for solitude. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=hidden+trails', 'Find hidden trails in North Cascades.')">https://morethanjustparks.com/washington-national-parks/?q=hidden+trails</a></p>
-      <p>The guide covered multi-day backpacking with permit details. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=backpacking', 'Learn about multi-day backpacking.')">https://www.nps.gov/state/wa/index.htm?q=backpacking</a></p>
-      <p>Scenic drives like Lake Crescent offered stunning vistas. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=scenic+drives', 'Explore scenic drives.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=scenic+drives</a></p>
+      <p>Olympic National Park’s rainforests and coastlines were highlights, with trails like Hall of Mosses offering scenery for a $30 fee. Mount Rainier’s Skyline Trail showed vibrant wildflowers. North Cascades’ glaciers and meadows catered to all adventurers.</p>
+      <p>We explored North Cascades’ Cascade Pass for solitude.</p>
+      <p>The guide covered multi-day backpacking with permit details.</p>
+      <p>Scenic drives like Lake Crescent offered stunning vistas. <a href="#" onclick="showPopup('', 'Diverse Park Experiences')">Sources</a></p>
 
       <h3>Wildlife and Photography Tips</h3>
-      <p>We spotted mountain goats at Mount Rainier’s Sunrise area and captured sunrise vistas at Hurricane Ridge. Crowd-avoidance tips ensured peaceful shots. The guide included accessible trails like Myrtle Falls. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=photography+tips', 'Get wildlife and photography tips.')">https://morethanjustparks.com/washington-national-parks/?q=photography+tips</a></p>
-      <p>Advice on filters elevated our rainforest photos. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=gear+advice', 'Discover gear advice for photography.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=gear+advice</a></p>
-      <p>Nocturnal owl spotting added a unique dimension. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=wildlife+viewing', 'Learn about wildlife viewing.')">https://www.nps.gov/state/wa/index.htm?q=wildlife+viewing</a></p>
-      <p>Ethical photography tips ensured habitat respect. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=ethical+photography', 'Understand ethical photography practices.')">https://morethanjustparks.com/washington-national-parks/?q=ethical+photography</a></p>
+      <p>We spotted mountain goats at Mount Rainier’s Sunrise area and captured sunrise vistas at Hurricane Ridge. Crowd-avoidance tips ensured peaceful shots. The guide included accessible trails like Myrtle Falls.</p>
+      <p>Advice on filters elevated our rainforest photos.</p>
+      <p>Nocturnal owl spotting added a unique dimension.</p>
+      <p>Ethical photography tips ensured habitat respect. <a href="#" onclick="showPopup('', 'Wildlife and Photography Tips')">Sources</a></p>
 
       <h2>Planning Your Visit to the National Parks</h2>
-      <p>Planning our trip was hassle-free using official resources. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=planning+basics', 'Get planning basics.')">https://www.nps.gov/state/wa/index.htm?q=planning+basics</a></p>
-      <p>Safety options provided peace of mind. <a href="#" onclick="showPopup('https://www.recreation.gov/search?q=Washington+National+Parks', 'Explore safety options.')">https://www.recreation.gov/search?q=Washington+National+Parks</a></p>
-      <p>Eco-friendly options aligned with our values. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=eco+options', 'Discover eco-friendly options.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=eco+options</a></p>
+      <p>Planning our trip was hassle-free using official resources.</p>
+      <p>Safety options provided peace of mind.</p>
+      <p>Eco-friendly options aligned with our values. <a href="#" onclick="showPopup('', 'Planning Your Visit to the National Parks')">Sources</a></p>
 
       <h3>Simple Planning Process</h3>
-      <p>Official websites provided instant information on fees and timelines. A review confirmed no surprises. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=planning+process', 'Learn the planning process.')">https://www.nps.gov/state/wa/index.htm?q=planning+process</a></p>
-      <p>We customized with expedited permits. <a href="#" onclick="showPopup('https://www.recreation.gov/search?q=Washington+National+Parks', 'Check permit details.')">https://www.recreation.gov/search?q=Washington+National+Parks</a></p>
-      <p>Clear instructions ensured smooth preparation. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=preparation+tips', 'Get preparation tips.')">https://morethanjustparks.com/washington-national-parks/?q=preparation+tips</a></p>
-      <p>Transparent information aided comparisons. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=options', 'Explore planning options.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=options</a></p>
+      <p>Official websites provided instant information on fees and timelines. A review confirmed no surprises.</p>
+      <p>We customized with expedited permits.</p>
+      <p>Clear instructions ensured smooth preparation.</p>
+      <p>Transparent information aided comparisons. <a href="#" onclick="showPopup('', 'Simple Planning Process')">Sources</a></p>
 
       <h3>Safe and Timely Arrival</h3>
-      <p>Our arrival was smooth and prepared, as noted on official sites. <a href="#" onclick="showPopup('https://www.recreation.gov/search?q=Washington+National+Parks', 'Learn arrival details.')">https://www.recreation.gov/search?q=Washington+National+Parks</a></p>
-      <p>Checklists matched our plans. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=checklists', 'Access checklists.')">https://www.nps.gov/state/wa/index.htm?q=checklists</a></p>
-      <p>The resource network minimized risks. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=resources', 'Explore resource network.')">https://morethanjustparks.com/washington-national-parks/?q=resources</a></p>
-      <p>Flexible schedules fit our itinerary. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=schedules', 'Check flexible schedules.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=schedules</a></p>
+      <p>Our arrival was smooth and prepared, as noted on official sites.</p>
+      <p>Checklists matched our plans.</p>
+      <p>The resource network minimized risks.</p>
+      <p>Flexible schedules fit our itinerary. <a href="#" onclick="showPopup('', 'Safe and Timely Arrival')">Sources</a></p>
 
       <h3>Responsive Resources</h3>
-      <p>Real-time updates via apps kept us informed. Resources answered questions quickly. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=updates', 'Get real-time updates.')">https://www.nps.gov/state/wa/index.htm?q=updates</a></p>
-      <p>24/7 availability helped with queries. <a href="#" onclick="showPopup('https://www.recreation.gov/search?q=Washington+National+Parks', 'Learn about availability.')">https://www.recreation.gov/search?q=Washington+National+Parks</a></p>
-      <p>Assistance included local regulation tips. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=assistance', 'Get assistance tips.')">https://morethanjustparks.com/washington-national-parks/?q=assistance</a></p>
-      <p>Multilingual options aided our group. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=language+support', 'Explore language support.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=language+support</a></p>
+      <p>Real-time updates via apps kept us informed. Resources answered questions quickly.</p>
+      <p>24/7 availability helped with queries.</p>
+      <p>Assistance included local regulation tips.</p>
+      <p>Multilingual options aided our group. <a href="#" onclick="showPopup('', 'Responsive Resources')">Sources</a></p>
 
       <h2>Community Trust and Feedback</h2>
-      <p>Official resources are trusted by travelers, building a strong community. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=community+trust', 'Learn about community trust.')">https://www.nps.gov/state/wa/index.htm?q=community+trust</a></p>
-      <p>Social media offers real-time feedback. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=social+media', 'Check social media feedback.')">https://morethanjustparks.com/washington-national-parks/?q=social+media</a></p>
-      <p>Forums enhance planning discussions. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=forums', 'Explore planning forums.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=forums</a></p>
+      <p>Official resources are trusted by travelers, building a strong community.</p>
+      <p>Social media offers real-time feedback.</p>
+      <p>Forums enhance planning discussions. <a href="#" onclick="showPopup('', 'Community Trust and Feedback')">Sources</a></p>
 
       <h3>Visitor Testimonials</h3>
-      <p>Friends praised the guide, noting bear sightings. Reviews highlight reliability. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=testimonials', 'Read visitor testimonials.')">https://morethanjustparks.com/washington-national-parks/?q=testimonials</a></p>
-      <p>Tips saved money on gear. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=savings+tips', 'Get savings tips.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=savings+tips</a></p>
-      <p>We shared our review. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=submit+review', 'Submit your review.')">https://www.nps.gov/state/wa/index.htm?q=submit+review</a></p>
-      <p>Users found hidden gems. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=hidden+gems', 'Discover hidden gems.')">https://morethanjustparks.com/washington-national-parks/?q=hidden+gems</a></p>
+      <p>Friends praised the guide, noting bear sightings. Reviews highlight reliability.</p>
+      <p>Tips saved money on gear.</p>
+      <p>We shared our review.</p>
+      <p>Users found hidden gems. <a href="#" onclick="showPopup('', 'Visitor Testimonials')">Sources</a></p>
 
       <h3>Recognition</h3>
-      <p>High ratings and eco-commitments showcase reputation. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=recognition', 'Learn about recognition.')">https://www.nps.gov/state/wa/index.htm?q=recognition</a></p>
-      <p>Awards underscore excellence. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=awards', 'Check out awards.')">https://morethanjustparks.com/washington-national-parks/?q=awards</a></p>
-      <p>Partnerships bolster credibility. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=partnerships', 'Explore partnerships.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=partnerships</a></p>
-      <p>Eco-certifications appeal to green travelers. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=eco+certifications', 'Learn about eco-certifications.')">https://www.nps.gov/state/wa/index.htm?q=eco+certifications</a></p>
+      <p>High ratings and eco-commitments showcase reputation.</p>
+      <p>Awards underscore excellence.</p>
+      <p>Partnerships bolster credibility.</p>
+      <p>Eco-certifications appeal to green travelers. <a href="#" onclick="showPopup('', 'Recognition')">Sources</a></p>
 
       <h2>Serving Adventure Seekers Nationwide</h2>
-      <p>Resources support explorers across the U.S. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=nationwide+support', 'Get nationwide support.')">https://www.nps.gov/state/wa/index.htm?q=nationwide+support</a></p>
-      <p>Coverage includes remote areas. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=remote+access', 'Learn about remote access.')">https://morethanjustparks.com/washington-national-parks/?q=remote+access</a></p>
-      <p>Partnerships offer discounts. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=discounts', 'Explore discount opportunities.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=discounts</a></p>
+      <p>Resources support explorers across the U.S.</p>
+      <p>Coverage includes remote areas.</p>
+      <p>Partnerships offer discounts. <a href="#" onclick="showPopup('', 'Serving Adventure Seekers Nationwide')">Sources</a></p>
 
       <h3>Ideal for Park Visitors</h3>
-      <p>The guide offers tips like the $30 Olympic fee. <a href="#" onclick="showPopup('https://www.recreation.gov/search?q=Olympic+National+Park', 'Get visitor tips.')">https://www.recreation.gov/search?q=Olympic+National+Park</a></p>
-      <p>Accessibility ensures inclusivity. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=accessibility', 'Learn about accessibility.')">https://www.nps.gov/state/wa/index.htm?q=accessibility</a></p>
-      <p>Event calendars add value. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=events', 'Check event calendars.')">https://morethanjustparks.com/washington-national-parks/?q=events</a></p>
-      <p>Nearby attractions enhance trips. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=attractions', 'Explore nearby attractions.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=attractions</a></p>
+      <p>The guide offers tips like the $30 Olympic fee.</p>
+      <p>Accessibility ensures inclusivity.</p>
+      <p>Event calendars add value.</p>
+      <p>Nearby attractions enhance trips. <a href="#" onclick="showPopup('', 'Ideal for Park Visitors')">Sources</a></p>
 
       <h3>Flexible Options</h3>
-      <p>Options cater to all budgets. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=flexible+options', 'Learn about flexible options.')">https://www.nps.gov/state/wa/index.htm?q=flexible+options</a></p>
-      <p>Discounts aid accessibility. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=discounts', 'Check discount details.')">https://morethanjustparks.com/washington-national-parks/?q=discounts</a></p>
-      <p>Global options are available. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=global+options', 'Explore global options.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=global+options</a></p>
-      <p>Multi-options benefit groups. <a href="#" onclick="showPopup('https://www.recreation.gov/search?q=Washington+National+Parks', 'Learn about multi-options.')">https://www.recreation.gov/search?q=Washington+National+Parks</a></p>
+      <p>Options cater to all budgets.</p>
+      <p>Discounts aid accessibility.</p>
+      <p>Global options are available.</p>
+      <p>Multi-options benefit groups. <a href="#" onclick="showPopup('', 'Flexible Options')">Sources</a></p>
 
       <h2>Why We Recommend This Guide</h2>
-      <p>We recommend this guide based on our experience. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=recommendation', 'See why we recommend this guide.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=recommendation</a></p>
-      <p>Accuracy sets it apart. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=accuracy', 'Learn about guide accuracy.')">https://morethanjustparks.com/washington-national-parks/?q=accuracy</a></p>
-      <p>Updates keep it relevant. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=updates', 'Check for updates.')">https://www.nps.gov/state/wa/index.htm?q=updates</a></p>
+      <p>We recommend this guide based on our experience.</p>
+      <p>Accuracy sets it apart.</p>
+      <p>Updates keep it relevant. <a href="#" onclick="showPopup('', 'Why We Recommend This Guide')">Sources</a></p>
 
       <h3>For First-Timers</h3>
-      <p>The guide offers packing and safety tips for beginners. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=beginner+tips', 'Get beginner tips.')">https://morethanjustparks.com/washington-national-parks/?q=beginner+tips</a></p>
-      <p>It clarifies regulations. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=regulations', 'Understand regulations.')">https://www.nps.gov/state/wa/index.htm?q=regulations</a></p>
-      <p>Itineraries maximize time. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=itineraries', 'Explore itineraries.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=itineraries</a></p>
-      <p>Emergency tips were valuable. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=emergency+tips', 'Learn emergency tips.')">https://morethanjustparks.com/washington-national-parks/?q=emergency+tips</a></p>
+      <p>The guide offers packing and safety tips for beginners.</p>
+      <p>It clarifies regulations.</p>
+      <p>Itineraries maximize time.</p>
+      <p>Emergency tips were valuable. <a href="#" onclick="showPopup('', 'For First-Timers')">Sources</a></p>
 
       <h3>For Seasoned Travelers</h3>
-      <p>Advanced hike advice enhances exploration. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=advanced+tips', 'Get advanced hike advice.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=advanced+tips</a></p>
-      <p>Gear recommendations appeal to pros. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=gear+recommendations', 'Check gear recommendations.')">https://morethanjustparks.com/washington-national-parks/?q=gear+recommendations</a></p>
-      <p>App integration keeps informed. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=app+integration', 'Learn about app integration.')">https://www.nps.gov/state/wa/index.htm?q=app+integration</a></p>
-      <p>Tips catered to our group. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=group+tips', 'Explore group tips.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=group+tips</a></p>
+      <p>Advanced hike advice enhances exploration.</p>
+      <p>Gear recommendations appeal to pros.</p>
+      <p>App integration keeps informed.</p>
+      <p>Tips catered to our group. <a href="#" onclick="showPopup('', 'For Seasoned Travelers')">Sources</a></p>
 
       <h2>The Future of Park Exploration</h2>
-      <p>Resources lead in innovative support. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=future+plans', 'Learn about future plans.')">https://www.nps.gov/state/wa/index.htm?q=future+plans</a></p>
-      <p>Sustainability shapes offerings. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=sustainability', 'Discover sustainability efforts.')">https://morethanjustparks.com/washington-national-parks/?q=sustainability</a></p>
-      <p>Collaborations offer perks. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=collaborations', 'Explore collaboration perks.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=collaborations</a></p>
+      <p>Resources lead in innovative support.</p>
+      <p>Sustainability shapes offerings.</p>
+      <p>Collaborations offer perks. <a href="#" onclick="showPopup('', 'The Future of Park Exploration')">Sources</a></p>
 
       <h3>Innovative Tools</h3>
-      <p>Websites hint at VR previews for 2026. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=innovative+tools', 'Check innovative tools.')">https://www.nps.gov/state/wa/index.htm?q=innovative+tools</a></p>
-      <p>AI optimizers are in development. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=AI+optimizers', 'Learn about AI optimizers.')">https://morethanjustparks.com/washington-national-parks/?q=AI+optimizers</a></p>
-      <p>Partnerships bring enhancements. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=enhancements', 'Explore enhancements.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=enhancements</a></p>
-      <p>Mobile enhancements streamline planning. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=mobile+features', 'Learn about mobile features.')">https://www.nps.gov/state/wa/index.htm?q=mobile+features</a></p>
+      <p>Websites hint at VR previews for 2026.</p>
+      <p>AI optimizers are in development.</p>
+      <p>Partnerships bring enhancements.</p>
+      <p>Mobile enhancements streamline planning. <a href="#" onclick="showPopup('', 'Innovative Tools')">Sources</a></p>
 
       <h3>Continued Excellence</h3>
-      <p>Focus on satisfaction ensures trust. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=excellence', 'Learn about continued excellence.')">https://morethanjustparks.com/washington-national-parks/?q=excellence</a></p>
-      <p>Updates ensure evolution. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=updates', 'Check for updates.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=updates</a></p>
-      <p>Events foster loyalty. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=events', 'Explore upcoming events.')">https://www.nps.gov/state/wa/index.htm?q=events</a></p>
-      <p>Expansion signals ambitions. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=expansion', 'Learn about expansion plans.')">https://morethanjustparks.com/washington-national-parks/?q=expansion</a></p>
+      <p>Focus on satisfaction ensures trust.</p>
+      <p>Updates ensure evolution.</p>
+      <p>Events foster loyalty.</p>
+      <p>Expansion signals ambitions. <a href="#" onclick="showPopup('', 'Continued Excellence')">Sources</a></p>
 
-      <p>As of 02:52 PM PST, August 18, 2025, we had an amazing time exploring Washington’s parks thanks to the guide. Ready for your adventure? Start planning here: <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=plan+your+visit', 'Start planning your visit.')">https://www.nps.gov/state/wa/index.htm?q=plan+your+visit</a></p>
-      <p>Check blogs for more inspiration. <a href="#" onclick="showPopup('https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=blogs', 'Explore more blogs.')">https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=blogs</a></p>
-      <p>Join newsletters for updates. <a href="#" onclick="showPopup('https://morethanjustparks.com/washington-national-parks/?q=newsletters', 'Sign up for newsletters.')">https://morethanjustparks.com/washington-national-parks/?q=newsletters</a></p>
-      <p>Follow social media for updates. <a href="#" onclick="showPopup('https://www.nps.gov/state/wa/index.htm?q=social+media', 'Follow on social media.')">https://www.nps.gov/state/wa/index.htm?q=social+media</a></p>
+      <p>As of 02:52 PM PST, August 18, 2025, we had an amazing time exploring Washington’s parks thanks to the guide. Ready for your adventure? Start planning here: <a href="#" onclick="showPopup('', 'Discover Washington’s Must-See National Parks')">Sources</a></p>
+      <p>Check blogs for more inspiration.</p>
+      <p>Join newsletters for updates.</p>
+      <p>Follow social media for updates.</p>
     </div>
   </main>
   <footer id="footer"></footer>
@@ -242,138 +241,180 @@
     <span class="close-btn" onclick="hidePopup()">&times;</span>
     <div id="popupContent" class="popup-content"></div>
     <div id="relatedContent" class="related-content">
-      <h3>Related Content</h3>
-      <div id="relatedLinks"></div>
+      <h3>Sources</h3>
+      <ul id="sourceList" class="source-list"></ul>
     </div>
-    <iframe id="popupIframe" class="popup-iframe"></iframe>
   </div>
 
   <script>
-    function showPopup(url, description) {
+    function showPopup(url, section) {
       event.preventDefault();
-      const contentElement = document.getElementById('popupContent');
-      contentElement.innerHTML = `<p>${description}</p><p>Preview below or click here to open in a new tab.</p>`;
-      contentElement.onclick = function() {
-        window.open(url, '_blank');
-      };
-      const iframe = document.getElementById('popupIframe');
-      iframe.src = url;
+      document.getElementById('popupContent').innerHTML = '';
+      const sourceList = document.getElementById('sourceList');
+      sourceList.innerHTML = ''; // Clear previous list
       document.getElementById('sidebarPopup').classList.add('active');
 
-      // Populate related content based on section
-      const relatedLinks = document.getElementById('relatedLinks');
-      relatedLinks.innerHTML = ''; // Clear previous content
-      const section = event.target.closest('h1, h2, h3, p')?.textContent || 'General';
       const relatedContent = {
         'Discover Washington’s Must-See National Parks': [
-          'Planning your visit: https://www.nps.gov/state/wa/index.htm?q=plan+your+visit',
-          'Eco-friendly travel tips: https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=sustainable+travel'
+          {title: 'An Amazing In-Depth Guide to the National Parks in Washington State', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=must-see+national+parks+in+washington'},
+          {title: 'Washington\'s National Parks Ranked Best in the World', url: 'https://morethanjustparks.com/washington-national-parks/?q=must-see+national+parks+in+washington'},
+          {title: 'THE 15 BEST Washington National Parks', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=must-see+national+parks+in+washington'},
+          {title: 'Washington National Parks: Travel Guide & Itinerary', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=must-see+national+parks+in+washington'},
+          {title: 'The BEST Washington (State) National parks 2025', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=must-see+national+parks+in+washington'}
         ],
         'Why We Chose This Guide': [
-          'Visitor statistics: https://morethanjustparks.com/washington-national-parks/?q=visitor+statistics',
-          'Family activities: https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=family+activities'
+          {title: 'Visitor statistics for Washington parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=visitor+statistics'},
+          {title: 'Family-friendly activities in Washington parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=family+activities'},
+          {title: 'Official planning resources for national parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+resources'},
+          {title: 'Local dining options near Washington parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=local+dining'},
+          {title: 'Best national parks in Washington state', url: 'https://www.reddit.com/r/NationalPark/comments/1emqfwf/best_national_park_in_washington_state/?q=best+national+park+in+washington+state'}
         ],
         'Key Features of the National Parks Guide': [
-          'Seasonal calendars: https://morethanjustparks.com/washington-national-parks/?q=seasonal+calendars',
-          'Safety protocols: https://www.nps.gov/state/wa/index.htm?q=safety+protocols'
+          {title: 'Seasonal calendars for Washington national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=seasonal+calendars'},
+          {title: 'Safety protocols for remote areas in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=safety+protocols'},
+          {title: 'Travel guide & itinerary for Washington national parks', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=key+features'},
+          {title: 'Best places to visit in Washington national parks', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=key+features'},
+          {title: 'National parks in the Pacific Northwest', url: 'https://www.emeraldpalate.com/national-parks-in-the-pacific-northwest/?q=key+features'}
         ],
         'Diverse Park Experiences': [
-          'Park experiences: https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=park+experiences',
-          'Hidden trails: https://morethanjustparks.com/washington-national-parks/?q=hidden+trails'
+          {title: 'Park experiences in Washington state', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=park+experiences'},
+          {title: 'Hidden trails in North Cascades', url: 'https://morethanjustparks.com/washington-national-parks/?q=hidden+trails'},
+          {title: 'Multi-day backpacking in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=backpacking'},
+          {title: 'Scenic drives in Washington national parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=scenic+drives'},
+          {title: 'Washington bucket list destinations', url: 'https://www.rvshare.com/blog/washington-bucket-list/?q=diverse+park+experiences'}
         ],
         'Wildlife and Photography Tips': [
-          'Photography tips: https://morethanjustparks.com/washington-national-parks/?q=photography+tips',
-          'Wildlife viewing: https://www.nps.gov/state/wa/index.htm?q=wildlife+viewing'
+          {title: 'Photography tips for Washington national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=photography+tips'},
+          {title: 'Gear advice for park photography', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=gear+advice'},
+          {title: 'Wildlife viewing in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=wildlife+viewing'},
+          {title: 'Ethical photography practices in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=ethical+photography'},
+          {title: 'North Cascades National Park Guide', url: 'https://www.washingtonstatetours.com/north-cascades-national-park-guide/?q=wildlife+and+photography+tips'}
         ],
         'Planning Your Visit to the National Parks': [
-          'Planning basics: https://www.nps.gov/state/wa/index.htm?q=planning+basics',
-          'Safety options: https://www.recreation.gov/search?q=Washington+National+Parks'
+          {title: 'Planning basics for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+basics'},
+          {title: 'Safety options in national parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+          {title: 'Eco-friendly options for park visits', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=eco+options'},
+          {title: 'Itinerary for Washington national parks', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=planning+visit'},
+          {title: 'Best time to visit Washington national parks', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=planning+visit'}
         ],
         'Simple Planning Process': [
-          'Planning process: https://www.nps.gov/state/wa/index.htm?q=planning+process',
-          'Permit details: https://www.recreation.gov/search?q=Washington+National+Parks'
+          {title: 'Planning process for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+process'},
+          {title: 'Permit details for national parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+          {title: 'Preparation tips for park trips', url: 'https://morethanjustparks.com/washington-national-parks/?q=preparation+tips'},
+          {title: 'Planning options for Washington parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=options'},
+          {title: 'National park planning guide', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=planning+process'}
         ],
         'Safe and Timely Arrival': [
-          'Arrival details: https://www.recreation.gov/search?q=Washington+National+Parks',
-          'Checklists: https://www.nps.gov/state/wa/index.htm?q=checklists'
+          {title: 'Arrival details for Washington parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+          {title: 'Checklists for park visits', url: 'https://www.nps.gov/state/wa/index.htm?q=checklists'},
+          {title: 'Resource network for safe visits', url: 'https://morethanjustparks.com/washington-national-parks/?q=resources'},
+          {title: 'Flexible schedules for itineraries', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=schedules'},
+          {title: 'Safe travel to national parks', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=safe+arrival'}
         ],
         'Responsive Resources': [
-          'Updates: https://www.nps.gov/state/wa/index.htm?q=updates',
-          'Assistance: https://morethanjustparks.com/washington-national-parks/?q=assistance'
+          {title: 'Real-time updates for parks', url: 'https://www.nps.gov/state/wa/index.htm?q=updates'},
+          {title: '24/7 availability for queries', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+          {title: 'Assistance with local regulations', url: 'https://morethanjustparks.com/washington-national-parks/?q=assistance'},
+          {title: 'Language support for groups', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=language+support'},
+          {title: 'Responsive park resources', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=responsive+resources'}
         ],
         'Community Trust and Feedback': [
-          'Community trust: https://www.nps.gov/state/wa/index.htm?q=community+trust',
-          'Testimonials: https://morethanjustparks.com/washington-national-parks/?q=testimonials'
+          {title: 'Community trust in park resources', url: 'https://www.nps.gov/state/wa/index.htm?q=community+trust'},
+          {title: 'Social media feedback for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=social+media'},
+          {title: 'Planning forums for enthusiasts', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=forums'},
+          {title: 'Trust and feedback from visitors', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=community+trust'},
+          {title: 'Reddit community feedback', url: 'https://www.reddit.com/r/NationalPark/comments/1emqfwf/best_national_park_in_washington_state/?q=community+trust'}
         ],
         'Visitor Testimonials': [
-          'Testimonials: https://morethanjustparks.com/washington-national-parks/?q=testimonials',
-          'Savings tips: https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=savings+tips'
+          {title: 'Visitor testimonials for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=testimonials'},
+          {title: 'Savings tips from testimonials', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=savings+tips'},
+          {title: 'Submit your park review', url: 'https://www.nps.gov/state/wa/index.htm?q=submit+review'},
+          {title: 'Hidden gems from testimonials', url: 'https://morethanjustparks.com/washington-national-parks/?q=hidden+gems'},
+          {title: 'RV visitor testimonials', url: 'https://www.rvshare.com/blog/washington-bucket-list/?q=visitor+testimonials'}
         ],
         'Recognition': [
-          'Recognition: https://www.nps.gov/state/wa/index.htm?q=recognition',
-          'Awards: https://morethanjustparks.com/washington-national-parks/?q=awards'
+          {title: 'Recognition of Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=recognition'},
+          {title: 'Awards for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=awards'},
+          {title: 'Partnerships for credibility', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=partnerships'},
+          {title: 'Eco-certifications for parks', url: 'https://www.nps.gov/state/wa/index.htm?q=eco+certifications'},
+          {title: 'Best national parks recognition', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=recognition'}
         ],
         'Serving Adventure Seekers Nationwide': [
-          'Nationwide support: https://www.nps.gov/state/wa/index.htm?q=nationwide+support',
-          'Remote access: https://morethanjustparks.com/washington-national-parks/?q=remote+access'
+          {title: 'Nationwide support for adventurers', url: 'https://www.nps.gov/state/wa/index.htm?q=nationwide+support'},
+          {title: 'Remote access in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=remote+access'},
+          {title: 'Discounts for adventure seekers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=discounts'},
+          {title: 'Adventure in Pacific Northwest parks', url: 'https://www.emeraldpalate.com/national-parks-in-the-pacific-northwest/?q=adventure+seekers'},
+          {title: 'Nationwide park itineraries', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=nationwide+support'}
         ],
         'Ideal for Park Visitors': [
-          'Visitor tips: https://www.recreation.gov/search?q=Olympic+National+Park',
-          'Accessibility: https://www.nps.gov/state/wa/index.htm?q=accessibility'
+          {title: 'Visitor tips for Olympic National Park', url: 'https://www.recreation.gov/search?q=Olympic+National+Park'},
+          {title: 'Accessibility in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=accessibility'},
+          {title: 'Event calendars for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=events'},
+          {title: 'Nearby attractions in Washington', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=attractions'},
+          {title: 'Best places for park visitors', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=park+visitors'}
         ],
         'Flexible Options': [
-          'Flexible options: https://www.nps.gov/state/wa/index.htm?q=flexible+options',
-          'Discounts: https://morethanjustparks.com/washington-national-parks/?q=discounts'
+          {title: 'Flexible options for park visits', url: 'https://www.nps.gov/state/wa/index.htm?q=flexible+options'},
+          {title: 'Discounts for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=discounts'},
+          {title: 'Global options for adventurers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=global+options'},
+          {title: 'Multi-options for groups', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+          {title: 'Flexible itineraries', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=flexible+options'}
         ],
         'Why We Recommend This Guide': [
-          'Recommendation: https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=recommendation',
-          'Accuracy: https://morethanjustparks.com/washington-national-parks/?q=accuracy'
+          {title: 'Recommendation for Washington guide', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=recommendation'},
+          {title: 'Accuracy of park guides', url: 'https://morethanjustparks.com/washington-national-parks/?q=accuracy'},
+          {title: 'Updates for national parks', url: 'https://www.nps.gov/state/wa/index.htm?q=updates'},
+          {title: 'Guide recommendation from Tripadvisor', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=recommendation'},
+          {title: 'Why choose this guide', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=recommendation'}
         ],
         'For First-Timers': [
-          'Beginner tips: https://morethanjustparks.com/washington-national-parks/?q=beginner+tips',
-          'Regulations: https://www.nps.gov/state/wa/index.htm?q=regulations'
+          {title: 'Beginner tips for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=beginner+tips'},
+          {title: 'Regulations for first-timers', url: 'https://www.nps.gov/state/wa/index.htm?q=regulations'},
+          {title: 'Itineraries for beginners', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=itineraries'},
+          {title: 'Emergency tips for new visitors', url: 'https://morethanjustparks.com/washington-national-parks/?q=emergency+tips'},
+          {title: 'First-time visitor guide', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=first-timers'}
         ],
         'For Seasoned Travelers': [
-          'Advanced tips: https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=advanced+tips',
-          'Gear recommendations: https://morethanjustparks.com/washington-national-parks/?q=gear+recommendations'
+          {title: 'Advanced tips for adventurers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=advanced+tips'},
+          {title: 'Gear recommendations for pros', url: 'https://morethanjustparks.com/washington-national-parks/?q=gear+recommendations'},
+          {title: 'App integration for seasoned travelers', url: 'https://www.nps.gov/state/wa/index.htm?q=app+integration'},
+          {title: 'Group tips for experienced groups', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=group+tips'},
+          {title: 'Advanced park exploration', url: 'https://www.emeraldpalate.com/national-parks-in-the-pacific-northwest/?q=seasoned+travelers'}
         ],
         'The Future of Park Exploration': [
-          'Future plans: https://www.nps.gov/state/wa/index.htm?q=future+plans',
-          'Sustainability: https://morethanjustparks.com/washington-national-parks/?q=sustainability'
+          {title: 'Future plans for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=future+plans'},
+          {title: 'Sustainability in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=sustainability'},
+          {title: 'Collaborations for park perks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=collaborations'},
+          {title: 'Future park developments', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=future+exploration'},
+          {title: 'Innovative park future', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=future+exploration'}
         ],
         'Innovative Tools': [
-          'Innovative tools: https://www.nps.gov/state/wa/index.htm?q=innovative+tools',
-          'AI optimizers: https://morethanjustparks.com/washington-national-parks/?q=AI+optimizers'
+          {title: 'Innovative tools for parks', url: 'https://www.nps.gov/state/wa/index.htm?q=innovative+tools'},
+          {title: 'AI optimizers for planning', url: 'https://morethanjustparks.com/washington-national-parks/?q=AI+optimizers'},
+          {title: 'Enhancements through partnerships', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=enhancements'},
+          {title: 'Mobile features for tools', url: 'https://www.nps.gov/state/wa/index.htm?q=mobile+features'},
+          {title: 'Future innovative tools', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=innovative+tools'}
         ],
         'Continued Excellence': [
-          'Excellence: https://morethanjustparks.com/washington-national-parks/?q=excellence',
-          'Updates: https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=updates'
+          {title: 'Continued excellence in parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=excellence'},
+          {title: 'Updates for ongoing excellence', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=updates'},
+          {title: 'Events for excellence', url: 'https://www.nps.gov/state/wa/index.htm?q=events'},
+          {title: 'Expansion for continued excellence', url: 'https://morethanjustparks.com/washington-national-parks/?q=expansion'},
+          {title: 'Excellence in park management', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=continued+excellence'}
         ]
       };
-      const links = relatedContent[section] || relatedContent['General'] || [];
-      links.forEach(link => {
-        const p = document.createElement('p');
-        p.textContent = link;
-        relatedLinks.appendChild(p);
+      const sources = relatedContent[section] || [];
+      sources.forEach(source => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${source.url}" target="_blank">${source.title}</a>`;
+        sourceList.appendChild(li);
       });
-
-      // Attempt to scroll iframe content to skip header
-      iframe.onload = function() {
-        try {
-          iframe.contentWindow.scrollTo(0, 100);
-        } catch (e) {
-          console.warn('Cannot scroll iframe due to cross-origin restrictions:', e);
-        }
-      };
     }
 
     function hidePopup() {
       document.getElementById('sidebarPopup').classList.remove('active');
-      document.getElementById('popupContent').onclick = null;
-      const iframe = document.getElementById('popupIframe');
-      iframe.src = '';
-      iframe.onload = null;
-      document.getElementById('relatedLinks').innerHTML = '';
+      document.getElementById('popupContent').innerHTML = '';
+      document.getElementById('sourceList').innerHTML = '';
     }
   </script>
   <script src="/js/blog-posts.js"></script>
