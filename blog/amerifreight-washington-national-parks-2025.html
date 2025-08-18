@@ -110,6 +110,30 @@
       background-color: #1a6ea6;
       transform: scale(0.98);
     }
+    .source-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .source-image {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+    .source-info {
+      flex-grow: 1;
+    }
+    .source-info a {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .source-info p {
+      margin: 0;
+      font-size: 14px;
+      color: #7f8c8d;
+    }
     @media (max-width: 600px) {
       .sidebar-popup {
         width: 100vw;
@@ -128,6 +152,10 @@
       .source-list a {
         padding: 8px 10px;
       }
+      .source-image {
+        width: 40px;
+        height: 40px;
+      }
     }
   </style>
 </head>
@@ -138,7 +166,7 @@
       <div class="featured-image-container">
         <img src="/images/washington-national-parks-placeholder.webp" alt="Washington National Parks Scenic View" class="featured-image">
       </div>
-      <div class="author">By Olivia Grant | 03:19 PM PST, August 18, 2025</div>
+      <div class="author">By Olivia Grant | 03:28 PM PST, August 18, 2025</div>
       <h1>Discover Washington’s Must-See National Parks</h1>
       <p>My friends and I had been dreaming about an epic road trip through Washington’s stunning national parks for months, and when we finally decided to make it happen in 2025, a comprehensive guide became our ultimate roadmap. This guide covers the lush landscapes of Olympic National Park, the majestic peaks of Mount Rainier, and the rugged wilderness of North Cascades, including tips on spotting wildlife and avoiding peak crowds. It made our 2025 adventure unforgettable.</p>
       <p>The guide included sustainable travel practices like leave-no-trace principles and eco-friendly packing lists, aligning with our commitment to preserving these natural wonders.</p>
@@ -258,7 +286,7 @@
       <p>Events foster loyalty.</p>
       <p>Expansion signals ambitions. <a href="#" onclick="showPopup('', 'Continued Excellence')">Sources</a></p>
 
-      <p>As of 03:19 PM PST, August 18, 2025, we had an amazing time exploring Washington’s parks thanks to the guide. Ready for your adventure? Start planning here: <a href="#" onclick="showPopup('', 'Discover Washington’s Must-See National Parks')">Sources</a></p>
+      <p>As of 03:28 PM PST, August 18, 2025, we had an amazing time exploring Washington’s parks thanks to the guide. Ready for your adventure? Start planning here: <a href="#" onclick="showPopup('', 'Discover Washington’s Must-See National Parks')">Sources</a></p>
       <p>Check blogs for more inspiration.</p>
       <p>Join newsletters for updates.</p>
       <p>Follow social media for updates.</p>
@@ -277,7 +305,7 @@
   </div>
 
   <script>
-    function showPopup(url, section) {
+    async function showPopup(url, section) {
       event.preventDefault();
       document.getElementById('popupContent').innerHTML = '';
       const sourceList = document.getElementById('sourceList');
@@ -434,11 +462,50 @@
         ]
       };
       const sources = relatedContent[section] || [];
-      sources.forEach(source => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${source.url}" target="_blank">${source.title}</a>`;
-        sourceList.appendChild(li);
-      });
+
+      for (const source of sources) {
+        try {
+          const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(source.url)}`);
+          const data = await response.json();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(data.contents, 'text/html');
+          
+          // Fetch featured image
+          let imageUrl = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') ||
+                         doc.querySelector('img')?.src || '/images/default-image.jpg';
+          if (imageUrl && !imageUrl.startsWith('http')) {
+            imageUrl = new URL(imageUrl, source.url).href;
+          }
+
+          // Fetch and modify excerpt
+          let excerpt = doc.querySelector('meta[name="description"]')?.getAttribute('content') ||
+                        doc.querySelector('p')?.textContent.substring(0, 100) || 'No description available.';
+          excerpt = excerpt.replace(/^\s+|\s+$/g, '') + ' - Enhanced for your park adventure!';
+
+          const li = document.createElement('li');
+          li.className = 'source-item';
+          li.innerHTML = `
+            <img src="${imageUrl}" alt="${source.title} image" class="source-image">
+            <div class="source-info">
+              <a href="${source.url}" target="_blank">${source.title}</a>
+              <p>${excerpt}</p>
+            </div>
+          `;
+          sourceList.appendChild(li);
+        } catch (error) {
+          console.error(`Error fetching data for ${source.url}:`, error);
+          const li = document.createElement('li');
+          li.className = 'source-item';
+          li.innerHTML = `
+            <img src="/images/default-image.jpg" alt="${source.title} image" class="source-image">
+            <div class="source-info">
+              <a href="${source.url}" target="_blank">${source.title}</a>
+              <p>Unable to fetch description - Check the link for more details!</p>
+            </div>
+          `;
+          sourceList.appendChild(li);
+        }
+      }
     }
 
     function hidePopup() {
