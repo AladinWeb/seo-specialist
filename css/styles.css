@@ -194,7 +194,7 @@ main {
 }
 
 .category-section a {
-  color: #ffffff; /* White for links */
+  color: #1e3a8a; 
   font-weight: 600;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -371,7 +371,7 @@ main {
 }
 
 .cta-content a {
-  color: #ffffff; /* White for links */
+  color: #1e3a8a; /* White for links */
   font-weight: 600;
   text-decoration: underline;
 }
