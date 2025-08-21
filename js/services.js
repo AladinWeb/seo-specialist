@@ -27,7 +27,7 @@ const serviceData = {
       <p>In Bulacan, where small and medium enterprises (SMEs) thrive, SEO can level the playing field against larger competitors. A well-optimized website can attract customers from San Jose del Monte, Malolos, or Meycauayan, driving both online and in-store sales. For example, a Bulacan bakery ranking for “fresh pandesal near me” can see increased foot traffic from nearby neighborhoods. We also leverage Bulacan’s growing digital adoption, with more residents using Google to find local services, to maximize your reach.</p>
       <p>Our SEO services extend beyond rankings. We help you build a strong online presence that reflects your brand’s values, whether you’re a family-owned business or a startup. By optimizing for local events (e.g., Bulacan’s Singkaban Festival), we create content that engages the community, fostering loyalty and repeat business. With Fuseven, your SEO investment translates into real-world growth for your Bulacan business.</p>
     `,
-    image: 'https://source.unsplash.com/random/600x400/?seo' // Replace with your image URL
+    image: '../images/fuseven-seo-services.webp' // Replace with your image URL
   },
   'web-development': {
     title: 'Web Development',
@@ -55,7 +55,7 @@ const serviceData = {
       <h4>Local Impact for Bulacan Businesses</h4>
       <p>In Bulacan, where digital adoption is rising, a professional website can differentiate your business from competitors. For instance, a well-designed site for a Malolos-based bakery can showcase daily specials, accept online orders, and rank high for “Bulacan bakery delivery.” We also integrate analytics to track visitor behavior, helping you refine marketing strategies. By blending local appeal with global functionality, Fuseven’s web development services empower Bulacan businesses to thrive in the digital age.</p>
     `,
-    image: 'https://source.unsplash.com/random/600x400/?web-development' // Replace with your image URL
+    image: '../images/fuseven-web-development.webp' // Replace with your image URL
   },
   'social-media-marketing': {
     title: 'Social Media Marketing',
@@ -82,7 +82,7 @@ const serviceData = {
       <h4>Local Impact for Bulacan Businesses</h4>
       <p>In Bulacan, social media is a game-changer for SMEs. A well-executed campaign can turn a local business into a household name. For example, a Baliwag boutique can use Instagram ads to showcase new arrivals, driving both online sales and store visits. By tapping into Bulacan’s vibrant online community, we help you build a loyal following, increase brand visibility, and compete with larger players.</p>
     `,
-    image: 'https://source.unsplash.com/random/600x400/?social-media' // Replace with your image URL
+    image: '../images/fuseven-social-media-marketing.webp' // Replace with your image URL
   },
   'content-marketing': {
     title: 'Content Marketing',
@@ -108,7 +108,7 @@ const serviceData = {
       <h4>Local Impact for Bulacan Businesses</h4>
       <p>In Bulacan, content marketing can transform how businesses connect with their community. A well-crafted blog or video can highlight your unique offerings, like a Meycauayan jewelry shop’s handcrafted designs, driving both online and in-store traffic. By focusing on local stories and SEO, we help Bulacan businesses build a loyal audience and compete in a digital-first world.</p>
     `,
-    image: 'https://source.unsplash.com/random/600x400/?content-marketing' // Replace with your image URL
+    image: '../images/fuseven-content-marketing.webp' // Replace with your image URL
   }
 };
 
