@@ -70,24 +70,36 @@
 
     <!-- Services Overview Section -->
     <section class="services-section">
-      <h2>Why Choose Fuseven for Digital Marketing in Bulacan?</h2>
-      <p>At Fuseven, we blend local expertise with global strategies to deliver results-driven digital marketing in Bulacan. Explore our services and <a href="/about-us">learn about our team</a> to see how we can elevate your brand!</p>
+      <div class="services-content">
+        <h2>Why Choose Fuseven for Digital Marketing in Bulacan?</h2>
+        <p>At Fuseven, we blend local expertise with global strategies to deliver results-driven digital marketing in Bulacan. Explore our services and <a href="/about-us">learn about our team</a> to see how we can elevate your brand!</p>
+      </div>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" data-service="seo-services">
           <h3>SEO Services</h3>
           <p>Rank higher on Google with our data-driven SEO strategies, including local SEO for Bulacan businesses, keyword research, and quality link-building to drive organic traffic.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-service="web-development">
           <h3>Web Development</h3>
           <p>Build stunning, responsive websites and e-commerce platforms optimized for user experience and conversions, tailored for Bulacan and global audiences.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-service="social-media-marketing">
           <h3>Social Media Marketing</h3>
           <p>Engage customers on platforms like Facebook, Instagram, and LinkedIn with targeted campaigns and compelling content to boost your brand’s reach.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-service="content-marketing">
           <h3>Content Marketing</h3>
           <p>Attract and retain customers with SEO-optimized blog posts, videos, and infographics designed to drive traffic and establish authority in Bulacan and beyond.</p>
+        </div>
+      </div>
+
+      <!-- Modal Structure -->
+      <div id="service-modal" class="modal-overlay">
+        <div class="modal-content">
+          <span class="modal-close">&times;</span>
+          <h3 id="modal-title"></h3>
+          <img id="modal-image" src="" alt="Service Image">
+          <p id="modal-description"></p>
         </div>
       </div>
     </section>
