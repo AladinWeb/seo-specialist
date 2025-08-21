@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           </div>
           <ul class="nav-links">
             <li><a href="/blog" class="nav-link">Blog</a></li>
-            <li><a href="/services" class="nav-link">Services</a></li>
             <li><a href="/about-us" class="nav-link">About</a></li>
             <li><a href="/contact-us" class="nav-link">Contact</a></li>
           </ul>
@@ -53,7 +52,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div class="mobile-menu">
             <ul>
               <li><a href="/blog" class="nav-link">Blog</a></li>
-              <li><a href="/services" class="nav-link">Services</a></li>
               <li><a href="/about-us" class="nav-link">About</a></li>
               <li><a href="/contact-us" class="nav-link">Contact</a></li>
             </ul>
