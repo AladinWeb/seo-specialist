@@ -178,10 +178,12 @@ main {
       background: #ffffff;
       padding: 24px;
       border-radius: 8px;
-      max-width: 600px;
+      max-width: 1000px; /* Increased from 600px */
       width: 90%;
       position: relative;
       box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+      max-height: 80vh; /* Added to prevent overflow */
+      overflow-y: auto; /* Enable scrolling if content is too long */
       color: #111111;
     }
     .modal-close {
