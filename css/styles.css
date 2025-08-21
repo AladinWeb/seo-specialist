@@ -175,6 +175,7 @@ main {
       z-index: 1000;
     }
     .modal-content {
+      background: #ffffff;
       padding: 24px;
       border-radius: 8px;
       max-width: 600px;
