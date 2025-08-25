@@ -62,6 +62,20 @@
       background-color: rgba(255, 255, 255, 0.9);
       border-radius: 8px;
     }
+    .popup-content h2 {
+      font-size: 24px;
+      color: #2980b9;
+      margin-bottom: 15px;
+    }
+    .popup-content h3 {
+      font-size: 20px;
+      color: #3498db;
+      margin: 20px 0 10px;
+    }
+    .popup-content p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
     .related-content {
       margin-top: 25px;
       border-top: 3px dashed #3498db;
@@ -110,30 +124,6 @@
       background-color: #1a6ea6;
       transform: scale(0.98);
     }
-    .source-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .source-image {
-      width: 50px;
-      height: 50px;
-      object-fit: cover;
-      margin-right: 10px;
-      border-radius: 5px;
-    }
-    .source-info {
-      flex-grow: 1;
-    }
-    .source-info a {
-      display: block;
-      margin-bottom: 5px;
-    }
-    .source-info p {
-      margin: 0;
-      font-size: 14px;
-      color: #7f8c8d;
-    }
     @media (max-width: 600px) {
       .sidebar-popup {
         width: 100vw;
@@ -146,15 +136,17 @@
         margin-top: 30px;
         font-size: 14px;
       }
+      .popup-content h2 {
+        font-size: 20px;
+      }
+      .popup-content h3 {
+        font-size: 18px;
+      }
       .related-content h3 {
         font-size: 18px;
       }
       .source-list a {
         padding: 8px 10px;
-      }
-      .source-image {
-        width: 40px;
-        height: 40px;
       }
     }
   </style>
@@ -351,7 +343,7 @@
     <span class="close-btn" onclick="hidePopup()">&times;</span>
     <div id="popupContent" class="popup-content"></div>
     <div id="relatedContent" class="related-content">
-      <h3>Sources</h3>
+      <h3>Related Resources</h3>
       <ul id="sourceList" class="source-list"></ul>
     </div>
   </div>
@@ -365,204 +357,383 @@
       const sidebarPopup = document.getElementById('sidebarPopup');
       
       // Clear previous content
-      popupContent.innerHTML = `<h2>${section}</h2>`;
+      popupContent.innerHTML = '';
       sourceList.innerHTML = '';
       
       // Show popup
       sidebarPopup.classList.add('active');
 
-      const relatedContent = {
-        'Discover Washington’s Must-See National Parks': [
-          {title: 'An Amazing In-Depth Guide to the National Parks in Washington State', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=must-see+national+parks+in+washington'},
-          {title: 'Washington\'s National Parks Ranked Best in the World', url: 'https://morethanjustparks.com/washington-national-parks/?q=must-see+national+parks+in+washington'},
-          {title: 'THE 15 BEST Washington National Parks', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=must-see+national+parks+in+washington'},
-          {title: 'Washington National Parks: Travel Guide & Itinerary', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=must-see+national+parks+in+washington'},
-          {title: 'The BEST Washington (State) National parks 2025', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=must-see+national+parks+in+washington'}
-        ],
-        'Why We Chose This Guide': [
-          {title: 'Visitor statistics for Washington parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=visitor+statistics'},
-          {title: 'Family-friendly activities in Washington parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=family+activities'},
-          {title: 'Official planning resources for national parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+resources'},
-          {title: 'Local dining options near Washington parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=local+dining'},
-          {title: 'Best national parks in Washington state', url: 'https://www.reddit.com/r/NationalPark/comments/1emqfwf/best_national_park_in_washington_state/?q=best+national+park+in+washington+state'}
-        ],
-        'Key Features of the National Parks Guide': [
-          {title: 'Seasonal calendars for Washington national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=seasonal+calendars'},
-          {title: 'Safety protocols for remote areas in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=safety+protocols'},
-          {title: 'Travel guide & itinerary for Washington national parks', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=key+features'},
-          {title: 'Best places to visit in Washington national parks', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=key+features'},
-          {title: 'National parks in the Pacific Northwest', url: 'https://www.emeraldpalate.com/national-parks-in-the-pacific-northwest/?q=key+features'}
-        ],
-        'Diverse Park Experiences': [
-          {title: 'Park experiences in Washington state', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=park+experiences'},
-          {title: 'Hidden trails in North Cascades', url: 'https://morethanjustparks.com/washington-national-parks/?q=hidden+trails'},
-          {title: 'Multi-day backpacking in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=backpacking'},
-          {title: 'Scenic drives in Washington national parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=scenic+drives'},
-          {title: 'Washington bucket list destinations', url: 'https://www.rvshare.com/blog/washington-bucket-list/?q=diverse+park+experiences'}
-        ],
-        'Wildlife and Photography Tips': [
-          {title: 'Photography tips for Washington national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=photography+tips'},
-          {title: 'Gear advice for park photography', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=gear+advice'},
-          {title: 'Wildlife viewing in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=wildlife+viewing'},
-          {title: 'Ethical photography practices in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=ethical+photography'},
-          {title: 'North Cascades National Park Guide', url: 'https://www.washingtonstatetours.com/north-cascades-national-park-guide/?q=wildlife+and+photography+tips'}
-        ],
-        'Planning Your Visit to the National Parks': [
-          {title: 'Planning basics for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+basics'},
-          {title: 'Safety options in national parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
-          {title: 'Eco-friendly options for park visits', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=eco+options'},
-          {title: 'Itinerary for Washington national parks', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=planning+visit'},
-          {title: 'Best time to visit Washington national parks', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=planning+visit'}
-        ],
-        'Simple Planning Process': [
-          {title: 'Planning process for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+process'},
-          {title: 'Permit details for national parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
-          {title: 'Preparation tips for park trips', url: 'https://morethanjustparks.com/washington-national-parks/?q=preparation+tips'},
-          {title: 'Planning options for Washington parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=options'},
-          {title: 'National park planning guide', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=planning+process'}
-        ],
-        'Safe and Timely Arrival': [
-          {title: 'Arrival details for Washington parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
-          {title: 'Checklists for park visits', url: 'https://www.nps.gov/state/wa/index.htm?q=checklists'},
-          {title: 'Resource network for safe visits', url: 'https://morethanjustparks.com/washington-national-parks/?q=resources'},
-          {title: 'Flexible schedules for itineraries', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=schedules'},
-          {title: 'Safe travel to national parks', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=safe+arrival'}
-        ],
-        'Responsive Resources': [
-          {title: 'Real-time updates for parks', url: 'https://www.nps.gov/state/wa/index.htm?q=updates'},
-          {title: '24/7 availability for queries', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
-          {title: 'Assistance with local regulations', url: 'https://morethanjustparks.com/washington-national-parks/?q=assistance'},
-          {title: 'Language support for groups', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=language+support'},
-          {title: 'Responsive park resources', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=responsive+resources'}
-        ],
-        'Community Trust and Feedback': [
-          {title: 'Community trust in park resources', url: 'https://www.nps.gov/state/wa/index.htm?q=community+trust'},
-          {title: 'Social media feedback for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=social+media'},
-          {title: 'Planning forums for enthusiasts', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=forums'},
-          {title: 'Trust and feedback from visitors', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=community+trust'},
-          {title: 'Reddit community feedback', url: 'https://www.reddit.com/r/NationalPark/comments/1emqfwf/best_national_park_in_washington_state/?q=community+trust'}
-        ],
-        'Visitor Testimonials': [
-          {title: 'Visitor testimonials for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=testimonials'},
-          {title: 'Savings tips from testimonials', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=savings+tips'},
-          {title: 'Submit your park review', url: 'https://www.nps.gov/state/wa/index.htm?q=submit+review'},
-          {title: 'Hidden gems from testimonials', url: 'https://morethanjustparks.com/washington-national-parks/?q=hidden+gems'},
-          {title: 'RV visitor testimonials', url: 'https://www.rvshare.com/blog/washington-bucket-list/?q=visitor+testimonials'}
-        ],
-        'Recognition': [
-          {title: 'Recognition of Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=recognition'},
-          {title: 'Awards for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=awards'},
-          {title: 'Partnerships for credibility', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=partnerships'},
-          {title: 'Eco-certifications for parks', url: 'https://www.nps.gov/state/wa/index.htm?q=eco+certifications'},
-          {title: 'Best national parks recognition', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=recognition'}
-        ],
-        'Serving Adventure Seekers Nationwide': [
-          {title: 'Nationwide support for adventurers', url: 'https://www.nps.gov/state/wa/index.htm?q=nationwide+support'},
-          {title: 'Remote access in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=remote+access'},
-          {title: 'Discounts for adventure seekers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=discounts'},
-          {title: 'Adventure in Pacific Northwest parks', url: 'https://www.emeraldpalate.com/national-parks-in-the-pacific-northwest/?q=adventure+seekers'},
-          {title: 'Nationwide park itineraries', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=nationwide+support'}
-        ],
-        'Ideal for Park Visitors': [
-          {title: 'Visitor tips for Olympic National Park', url: 'https://www.recreation.gov/search?q=Olympic+National+Park'},
-          {title: 'Accessibility in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=accessibility'},
-          {title: 'Event calendars for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=events'},
-          {title: 'Nearby attractions in Washington', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=attractions'},
-          {title: 'Best places for park visitors', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=park+visitors'}
-        ],
-        'Flexible Options': [
-          {title: 'Flexible options for park visits', url: 'https://www.nps.gov/state/wa/index.htm?q=flexible+options'},
-          {title: 'Discounts for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=discounts'},
-          {title: 'Global options for adventurers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=global+options'},
-          {title: 'Multi-options for groups', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
-          {title: 'Flexible itineraries', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=flexible+options'}
-        ],
-        'Why We Recommend This Guide': [
-          {title: 'Recommendation for Washington guide', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=recommendation'},
-          {title: 'Accuracy of park guides', url: 'https://morethanjustparks.com/washington-national-parks/?q=accuracy'},
-          {title: 'Updates for national parks', url: 'https://www.nps.gov/state/wa/index.htm?q=updates'},
-          {title: 'Guide recommendation from Tripadvisor', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=recommendation'},
-          {title: 'Why choose this guide', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=recommendation'}
-        ],
-        'For First-Timers': [
-          {title: 'Beginner tips for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=beginner+tips'},
-          {title: 'Regulations for first-timers', url: 'https://www.nps.gov/state/wa/index.htm?q=regulations'},
-          {title: 'Itineraries for beginners', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=itineraries'},
-          {title: 'Emergency tips for new visitors', url: 'https://morethanjustparks.com/washington-national-parks/?q=emergency+tips'},
-          {title: 'First-time visitor guide', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=first-timers'}
-        ],
-        'For Seasoned Travelers': [
-          {title: 'Advanced tips for adventurers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=advanced+tips'},
-          {title: 'Gear recommendations for pros', url: 'https://morethanjustparks.com/washington-national-parks/?q=gear+recommendations'},
-          {title: 'App integration for seasoned travelers', url: 'https://www.nps.gov/state/wa/index.htm?q=app+integration'},
-          {title: 'Group tips for experienced groups', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=group+tips'},
-          {title: 'Advanced park exploration', url: 'https://www.emeraldpalate.com/national-parks-in-the-pacific-northwest/?q=seasoned+travelers'}
-        ],
-        'The Future of Park Exploration': [
-          {title: 'Future plans for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=future+plans'},
-          {title: 'Sustainability in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=sustainability'},
-          {title: 'Collaborations for park perks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=collaborations'},
-          {title: 'Future park developments', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=future+exploration'},
-          {title: 'Innovative park future', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=future+exploration'}
-        ],
-        'Innovative Tools': [
-          {title: 'Innovative tools for parks', url: 'https://www.nps.gov/state/wa/index.htm?q=innovative+tools'},
-          {title: 'AI optimizers for planning', url: 'https://morethanjustparks.com/washington-national-parks/?q=AI+optimizers'},
-          {title: 'Enhancements through partnerships', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=enhancements'},
-          {title: 'Mobile features for tools', url: 'https://www.nps.gov/state/wa/index.htm?q=mobile+features'},
-          {title: 'Future innovative tools', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=innovative+tools'}
-        ],
-        'Continued Excellence': [
-          {title: 'Continued excellence in parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=excellence'},
-          {title: 'Updates for ongoing excellence', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=updates'},
-          {title: 'Events for excellence', url: 'https://www.nps.gov/state/wa/index.htm?q=events'},
-          {title: 'Expansion for continued excellence', url: 'https://morethanjustparks.com/washington-national-parks/?q=expansion'},
-          {title: 'Excellence in park management', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=continued+excellence'}
-        ]
+      const contentData = {
+        'Discover Washington’s Must-See National Parks': {
+          content: `
+            <h2>${section}</h2>
+            <p>Washington’s national parks offer a breathtaking array of landscapes, from lush rainforests to towering peaks. This section introduces you to the wonders of Olympic, Mount Rainier, and North Cascades National Parks, each with unique ecosystems and adventures.</p>
+            <h3>Olympic National Park</h3>
+            <p>Explore the diverse terrain of Olympic, from the temperate Hoh Rainforest to the rugged Pacific coastline. The guide highlights key trails and sustainable practices for an eco-conscious visit.</p>
+            <h3>Mount Rainier National Park</h3>
+            <p>Mount Rainier’s iconic peak dominates the skyline, offering stunning vistas and wildflower meadows. Learn about the best trails and photography spots to capture its beauty.</p>
+            <h3>North Cascades National Park</h3>
+            <p>Known for its rugged wilderness, North Cascades is a haven for adventurers. Discover remote trails and glacier views that make this park a hidden gem.</p>
+          `,
+          sources: [
+            {title: 'An Amazing In-Depth Guide to the National Parks in Washington State', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=must-see+national+parks+in+washington'},
+            {title: 'Washington\'s National Parks Ranked Best in the World', url: 'https://morethanjustparks.com/washington-national-parks/?q=must-see+national+parks+in+washington'},
+            {title: 'THE 15 BEST Washington National Parks', url: 'https://www.tripadvisor.com/Attractions-g28968-Activities-c57-t67-Washington.html?q=must-see+national+parks+in+washington'},
+            {title: 'Washington National Parks: Travel Guide & Itinerary', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=must-see+national+parks+in+washington'},
+            {title: 'The BEST Washington (State) National parks 2025', url: 'https://www.getyourguide.com/washington-state-l562/national-parks-tc36/?q=must-see+national+parks+in+washington'}
+          ]
+        },
+        'Why We Chose This Guide': {
+          content: `
+            <h2>${section}</h2>
+            <p>Our group chose this guide for its comprehensive and reliable information, tailored to enhance our park experience. Here’s why it stood out among other resources.</p>
+            <h3>Detailed Park Insights</h3>
+            <p>The guide provided in-depth details on each park, including visitor statistics and unique features, helping us plan effectively.</p>
+            <h3>Family-Friendly Focus</h3>
+            <p>With activities suitable for all ages, the guide ensured everyone in our group enjoyed the trip, from kids to adults.</p>
+            <h3>Time-Saving Resources</h3>
+            <p>Integration with official park resources streamlined our planning, leaving more time for exploration.</p>
+          `,
+          sources: [
+            {title: 'Visitor statistics for Washington parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=visitor+statistics'},
+            {title: 'Family-friendly activities in Washington parks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=family+activities'},
+            {title: 'Official planning resources for national parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+resources'}
+          ]
+        },
+        'Key Features of the National Parks Guide': {
+          content: `
+            <h2>${section}</h2>
+            <p>This guide’s standout features made our adventure seamless and memorable. Below are the key elements that enhanced our trip.</p>
+            <h3>Seasonal Planning Tools</h3>
+            <p>Seasonal calendars helped us choose the best times to visit, avoiding crowds and enjoying optimal weather.</p>
+            <h3>Safety and Emergency Resources</h3>
+            <p>Detailed safety protocols and emergency contacts provided peace of mind in remote park areas.</p>
+            <h3>Comprehensive Itineraries</h3>
+            <p>Pre-planned itineraries ensured we didn’t miss must-see attractions, making our trip efficient and enjoyable.</p>
+          `,
+          sources: [
+            {title: 'Seasonal calendars for Washington national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=seasonal+calendars'},
+            {title: 'Safety protocols for remote areas in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=safety+protocols'},
+            {title: 'Travel guide & itinerary for Washington national parks', url: 'https://www.earthtrekkers.com/washington-national-parks-itinerary/?q=key+features'}
+          ]
+        },
+        'Diverse Park Experiences': {
+          content: `
+            <h2>${section}</h2>
+            <p>Each of Washington’s national parks offers unique experiences, catering to a variety of interests and adventure levels.</p>
+            <h3>Olympic’s Varied Landscapes</h3>
+            <p>From coastal beaches to lush rainforests, Olympic National Park provides a range of trails and scenic drives for all visitors.</p>
+            <h3>Mount Rainier’s Iconic Trails</h3>
+            <p>The Skyline Trail and other routes showcase Mount Rainier’s wildflower meadows and stunning vistas.</p>
+            <h3>North Cascades’ Wilderness</h3>
+            <p>Perfect for those seeking solitude, North Cascades offers rugged trails and glacier views for experienced adventurers.</p>
+          `,
+          sources: [
+            {title: 'Park experiences in Washington state', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=park+experiences'},
+            {title: 'Hidden trails in North Cascades', url: 'https://morethanjustparks.com/washington-national-parks/?q=hidden+trails'},
+            {title: 'Multi-day backpacking in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=backpacking'}
+          ]
+        },
+        'Wildlife and Photography Tips': {
+          content: `
+            <h2>${section}</h2>
+            <p>Capturing the beauty of Washington’s parks is a highlight for many visitors. This guide offered practical tips for wildlife spotting and photography.</p>
+            <h3>Wildlife Viewing</h3>
+            <p>Learn where to spot mountain goats and elk, with tips for ethical wildlife observation.</p>
+            <h3>Photography Techniques</h3>
+            <p>Advice on filters and timing helped us capture stunning shots, especially at sunrise and sunset.</p>
+            <h3>Accessible Trails for Photos</h3>
+            <p>The guide highlighted trails like Myrtle Falls, perfect for photographers of all skill levels.</p>
+          `,
+          sources: [
+            {title: 'Photography tips for Washington national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=photography+tips'},
+            {title: 'Wildlife viewing in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=wildlife+viewing'},
+            {title: 'Ethical photography practices in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=ethical+photography'}
+          ]
+        },
+        'Planning Your Visit to the National Parks': {
+          content: `
+            <h2>${section}</h2>
+            <p>Effective planning is key to a successful park visit. This guide provided all the tools we needed for a hassle-free experience.</p>
+            <h3>Official Resources</h3>
+            <p>Access to official park websites streamlined our planning with up-to-date information.</p>
+            <h3>Safety Measures</h3>
+            <p>Safety tips and emergency contacts ensured we were prepared for any situation.</p>
+            <h3>Eco-Friendly Practices</h3>
+            <p>The guide emphasized sustainable travel, aligning with our commitment to preserving nature.</p>
+          `,
+          sources: [
+            {title: 'Planning basics for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+basics'},
+            {title: 'Safety options in national parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+            {title: 'Eco-friendly options for park visits', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=eco+options'}
+          ]
+        },
+        'Simple Planning Process': {
+          content: `
+            <h2>${section}</h2>
+            <p>The guide’s straightforward planning process made organizing our trip a breeze.</p>
+            <h3>Clear Fee Information</h3>
+            <p>Transparent details on park fees helped us budget effectively.</p>
+            <h3>Permit Guidance</h3>
+            <p>Step-by-step permit instructions ensured we were prepared for backpacking and camping.</p>
+            <h3>Customizable Itineraries</h3>
+            <p>Flexible itineraries allowed us to tailor our trip to our group’s needs.</p>
+          `,
+          sources: [
+            {title: 'Planning process for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=planning+process'},
+            {title: 'Permit details for national parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+            {title: 'Preparation tips for park trips', url: 'https://morethanjustparks.com/washington-national-parks/?q=preparation+tips'}
+          ]
+        },
+        'Safe and Timely Arrival': {
+          content: `
+            <h2>${section}</h2>
+            <p>Arriving at the parks was seamless thanks to the guide’s detailed preparation tools.</p>
+            <h3>Arrival Checklists</h3>
+            <p>Comprehensive checklists ensured we had all necessary gear and permits.</p>
+            <h3>Flexible Scheduling</h3>
+            <p>The guide’s flexible schedules fit our travel plans perfectly.</p>
+            <h3>Risk Mitigation</h3>
+            <p>Resources for minimizing risks gave us confidence during our visit.</p>
+          `,
+          sources: [
+            {title: 'Arrival details for Washington parks', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+            {title: 'Checklists for park visits', url: 'https://www.nps.gov/state/wa/index.htm?q=checklists'},
+            {title: 'Resource network for safe visits', url: 'https://morethanjustparks.com/washington-national-parks/?q=resources'}
+          ]
+        },
+        'Responsive Resources': {
+          content: `
+            <h2>${section}</h2>
+            <p>Real-time support and resources kept us informed throughout our trip.</p>
+            <h3>Real-Time Updates</h3>
+            <p>Park apps provided instant updates on weather and trail conditions.</p>
+            <h3>24/7 Support</h3>
+            <p>Round-the-clock assistance answered our questions promptly.</p>
+            <h3>Multilingual Options</h3>
+            <p>Support for multiple languages made the guide accessible to our diverse group.</p>
+          `,
+          sources: [
+            {title: 'Real-time updates for parks', url: 'https://www.nps.gov/state/wa/index.htm?q=updates'},
+            {title: '24/7 availability for queries', url: 'https://www.recreation.gov/search?q=Washington+National+Parks'},
+            {title: 'Language support for groups', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=language+support'}
+          ]
+        },
+        'Community Trust and Feedback': {
+          content: `
+            <h2>${section}</h2>
+            <p>The guide’s strong community backing gave us confidence in its recommendations.</p>
+            <h3>Trusted Resources</h3>
+            <p>Official park resources are widely trusted by travelers for their reliability.</p>
+            <h3>Social Media Engagement</h3>
+            <p>Real-time feedback on social media helped us stay updated and connected.</p>
+            <h3>Community Forums</h3>
+            <p>Online forums provided valuable insights from other park enthusiasts.</p>
+          `,
+          sources: [
+            {title: 'Community trust in park resources', url: 'https://www.nps.gov/state/wa/index.htm?q=community+trust'},
+            {title: 'Social media feedback for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=social+media'},
+            {title: 'Planning forums for enthusiasts', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=forums'}
+          ]
+        },
+        'Visitor Testimonials': {
+          content: `
+            <h2>${section}</h2>
+            <p>Hear from other adventurers who used the guide to enhance their park visits.</p>
+            <h3>Reliable Recommendations</h3>
+            <p>Testimonials highlight the guide’s accuracy and usefulness for planning.</p>
+            <h3>Cost-Saving Tips</h3>
+            <p>Visitors shared how the guide helped them save on gear and fees.</p>
+            <h3>Hidden Gems</h3>
+            <p>Reviews pointed us to lesser-known trails and attractions we loved.</p>
+          `,
+          sources: [
+            {title: 'Visitor testimonials for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=testimonials'},
+            {title: 'Savings tips from testimonials', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=savings+tips'},
+            {title: 'Hidden gems from testimonials', url: 'https://morethanjustparks.com/washington-national-parks/?q=hidden+gems'}
+          ]
+        },
+        'Recognition': {
+          content: `
+            <h2>${section}</h2>
+            <p>The guide’s reputation is bolstered by its recognition and eco-friendly focus.</p>
+            <h3>Awards and Ratings</h3>
+            <p>High ratings and awards highlight the guide’s quality and reliability.</p>
+            <h3>Eco-Certifications</h3>
+            <p>Certifications for sustainable practices appeal to environmentally conscious travelers.</p>
+            <h3>Trusted Partnerships</h3>
+            <p>Collaborations with reputable organizations enhance the guide’s credibility.</p>
+          `,
+          sources: [
+            {title: 'Recognition of Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=recognition'},
+            {title: 'Awards for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=awards'},
+            {title: 'Partnerships for credibility', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=partnerships'}
+          ]
+        },
+        'Serving Adventure Seekers Nationwide': {
+          content: `
+            <h2>${section}</h2>
+            <p>The guide supports adventurers across the U.S. with comprehensive resources.</p>
+            <h3>Nationwide Coverage</h3>
+            <p>Resources cover parks nationwide, making it ideal for cross-country travelers.</p>
+            <h3>Remote Area Support</h3>
+            <p>Guidance for remote areas ensures safe and enjoyable visits.</p>
+            <h3>Discount Opportunities</h3>
+            <p>Partnerships offer discounts, making park visits more affordable.</p>
+          `,
+          sources: [
+            {title: 'Nationwide support for adventurers', url: 'https://www.nps.gov/state/wa/index.htm?q=nationwide+support'},
+            {title: 'Remote access in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=remote+access'},
+            {title: 'Discounts for adventure seekers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=discounts'}
+          ]
+        },
+        'Ideal for Park Visitors': {
+          content: `
+            <h2>${section}</h2>
+            <p>This guide is tailored to meet the needs of all park visitors, from families to solo adventurers.</p>
+            <h3>Practical Tips</h3>
+            <p>Details like park fees and trail recommendations make planning straightforward.</p>
+            <h3>Inclusive Accessibility</h3>
+            <p>Accessibility information ensures everyone can enjoy the parks.</p>
+            <h3>Event Calendars</h3>
+            <p>Calendars highlight park events, adding value to your visit.</p>
+          `,
+          sources: [
+            {title: 'Visitor tips for Olympic National Park', url: 'https://www.recreation.gov/search?q=Olympic+National+Park'},
+            {title: 'Accessibility in Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=accessibility'},
+            {title: 'Event calendars for parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=events'}
+          ]
+        },
+        'Flexible Options': {
+          content: `
+            <h2>${section}</h2>
+            <p>The guide offers flexible options to suit various budgets and group sizes.</p>
+            <h3>Budget-Friendly Choices</h3>
+            <p>Options for all budgets make park visits accessible to everyone.</p>
+            <h3>Group-Friendly Plans</h3>
+            <p>Multi-option itineraries cater to groups with diverse interests.</p>
+            <h3>Global Inspiration</h3>
+            <p>Ideas for global park adventures inspire future trips.</p>
+          `,
+          sources: [
+            {title: 'Flexible options for park visits', url: 'https://www.nps.gov/state/wa/index.htm?q=flexible+options'},
+            {title: 'Discounts for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=discounts'},
+            {title: 'Global options for adventurers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=global+options'}
+          ]
+        },
+        'Why We Recommend This Guide': {
+          content: `
+            <h2>${section}</h2>
+            <p>Our experience with this guide was exceptional, and we highly recommend it to others.</p>
+            <h3>Accurate Information</h3>
+            <p>The guide’s accuracy ensured we had reliable information for planning.</p>
+            <h3>Regular Updates</h3>
+            <p>Frequent updates kept the guide relevant and useful.</p>
+            <h3>Practical Tips</h3>
+            <p>Actionable advice made our trip smooth and enjoyable.</p>
+          `,
+          sources: [
+            {title: 'Recommendation for Washington guide', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=recommendation'},
+            {title: 'Accuracy of park guides', url: 'https://morethanjustparks.com/washington-national-parks/?q=accuracy'},
+            {title: 'Updates for national parks', url: 'https://www.nps.gov/state/wa/index.htm?q=updates'}
+          ]
+        },
+        'For First-Timers': {
+          content: `
+            <h2>${section}</h2>
+            <p>New to national park adventures? This guide is perfect for beginners.</p>
+            <h3>Beginner-Friendly Tips</h3>
+            <p>Packing lists and safety advice make your first visit stress-free.</p>
+            <h3>Clear Regulations</h3>
+            <p>Easy-to-understand park rules help you stay compliant.</p>
+            <h3>Time-Saving Itineraries</h3>
+            <p>Pre-planned routes maximize your park experience.</p>
+          `,
+          sources: [
+            {title: 'Beginner tips for national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=beginner+tips'},
+            {title: 'Regulations for first-timers', url: 'https://www.nps.gov/state/wa/index.htm?q=regulations'},
+            {title: 'Itineraries for beginners', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=itineraries'}
+          ]
+        },
+        'For Seasoned Travelers': {
+          content: `
+            <h2>${section}</h2>
+            <p>Experienced adventurers will find advanced tips to elevate their park visits.</p>
+            <h3>Challenging Hikes</h3>
+            <p>Recommendations for advanced trails push your limits.</p>
+            <h3>Gear Suggestions</h3>
+            <p>Expert gear advice ensures you’re prepared for rugged adventures.</p>
+            <h3>App Integration</h3>
+            <p>Real-time app updates keep seasoned travelers informed.</p>
+          `,
+          sources: [
+            {title: 'Advanced tips for adventurers', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=advanced+tips'},
+            {title: 'Gear recommendations for pros', url: 'https://morethanjustparks.com/washington-national-parks/?q=gear+recommendations'},
+            {title: 'App integration for seasoned travelers', url: 'https://www.nps.gov/state/wa/index.htm?q=app+integration'}
+          ]
+        },
+        'The Future of Park Exploration': {
+          content: `
+            <h2>${section}</h2>
+            <p>The guide is paving the way for innovative park exploration in the future.</p>
+            <h3>Emerging Technologies</h3>
+            <p>VR previews and AI planning tools are set to enhance park visits by 2026.</p>
+            <h3>Sustainability Focus</h3>
+            <p>Eco-friendly initiatives ensure parks remain pristine for future generations.</p>
+            <h3>Collaborative Perks</h3>
+            <p>Partnerships bring exclusive benefits for park visitors.</p>
+          `,
+          sources: [
+            {title: 'Future plans for Washington parks', url: 'https://www.nps.gov/state/wa/index.htm?q=future+plans'},
+            {title: 'Sustainability in national parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=sustainability'},
+            {title: 'Collaborations for park perks', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=collaborations'}
+          ]
+        },
+        'Innovative Tools': {
+          content: `
+            <h2>${section}</h2>
+            <p>Cutting-edge tools are transforming how we plan and experience park visits.</p>
+            <h3>VR Previews</h3>
+            <p>Virtual reality previews offer a sneak peek at park trails and attractions.</p>
+            <h3>AI Planning Tools</h3>
+            <p>AI-driven optimizers simplify trip planning with personalized recommendations.</p>
+            <h3>Mobile Enhancements</h3>
+            <p>Mobile apps streamline access to real-time park information.</p>
+          `,
+          sources: [
+            {title: 'Innovative tools for parks', url: 'https://www.nps.gov/state/wa/index.htm?q=innovative+tools'},
+            {title: 'AI optimizers for planning', url: 'https://morethanjustparks.com/washington-national-parks/?q=AI+optimizers'},
+            {title: 'Mobile features for tools', url: 'https://www.nps.gov/state/wa/index.htm?q=mobile+features'}
+          ]
+        },
+        'Continued Excellence': {
+          content: `
+            <h2>${section}</h2>
+            <p>The guide’s commitment to excellence ensures it remains a top choice for park visitors.</p>
+            <h3>Ongoing Updates</h3>
+            <p>Regular updates keep the guide relevant and reliable.</p>
+            <h3>Visitor Satisfaction</h3>
+            <p>A focus on user satisfaction builds trust and loyalty.</p>
+            <h3>Future Expansion</h3>
+            <p>Plans for expansion signal a bright future for park resources.</p>
+          `,
+          sources: [
+            {title: 'Continued excellence in parks', url: 'https://morethanjustparks.com/washington-national-parks/?q=excellence'},
+            {title: 'Updates for ongoing excellence', url: 'https://wheatlesswanderlust.com/national-parks-in-washington-state/?q=updates'},
+            {title: 'Expansion for continued excellence', url: 'https://morethanjustparks.com/washington-national-parks/?q=expansion'}
+          ]
+        }
       };
 
-      const sources = relatedContent[section] || [];
+      // Set popup content
+      popupContent.innerHTML = contentData[section]?.content || '<h2>Section Not Found</h2><p>Sorry, no additional information is available for this section.</p>';
 
+      // Populate sources
+      const sources = contentData[section]?.sources || [];
       for (const source of sources) {
-        try {
-          const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(source.url)}`);
-          const data = await response.json();
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(data.contents, 'text/html');
-          
-          let imageUrl = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') ||
-                        doc.querySelector('img')?.src || '/images/default-image.jpg';
-          if (imageUrl && !imageUrl.startsWith('http')) {
-            imageUrl = new URL(imageUrl, source.url).href;
-          }
-
-          let excerpt = doc.querySelector('meta[name="description"]')?.getAttribute('content') ||
-                       doc.querySelector('p')?.textContent.substring(0, 100) || 'No description available.';
-          excerpt = excerpt.replace(/^\s+|\s+$/g, '') + ' - Enhanced for your park adventure!';
-
-          const li = document.createElement('li');
-          li.className = 'source-item';
-          li.innerHTML = `
-            <img src="${imageUrl}" alt="${source.title} image" class="source-image">
-            <div class="source-info">
-              <a href="${source.url}" target="_blank">${source.title}</a>
-              <p>${excerpt}</p>
-            </div>
-          `;
-          sourceList.appendChild(li);
-        } catch (error) {
-          console.error(`Error fetching data for ${source.url}:`, error);
-          const li = document.createElement('li');
-          li.className = 'source-item';
-          li.innerHTML = `
-            <img src="/images/default-image.jpg" alt="${source.title} image" class="source-image">
-            <div class="source-info">
-              <a href="${source.url}" target="_blank">${source.title}</a>
-              <p>Unable to fetch description - Check the link for more details!</p>
-            </div>
-          `;
-          sourceList.appendChild(li);
-        }
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${source.url}" target="_blank">${source.title}</a>`;
+        sourceList.appendChild(li);
       }
     }
 
