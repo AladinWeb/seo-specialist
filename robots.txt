@@ -4,3 +4,4 @@ Disallow: /images/
 Disallow: /js/
 Disallow: /css/
 Sitemap: https://fuseven.net/sitemap.xml
+LLMS: https://fuseven.net/llms.txt
