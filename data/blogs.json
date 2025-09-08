@@ -1,21 +1,5 @@
 [
   {
-    "title": "Office Makeover with Go Beyond Builders | Commercial Renovation 2025",
-    "slug": "go-beyond-builders",
-    "category": "construction",
-    "date": "2025-06-17",
-    "content": "Go Beyond Builders revamped my Bay Area office in 2025 with expert commercial renovations and modern workspace design that elevated our business image.",
-    "image": "/images/gobeyondbuilders-placeholder.webp"
-  },
-  {
-    "title": "Elevating Content with Photo and Video Edits’ Video Editing Services",
-    "slug": "photo-video-editing",
-    "category": "real-estate",
-    "date": "2025-06-18",
-    "content": "Discover how Photo and Video Edits transformed my video content with professional editing services in 2025.",
-    "image": "/images/photoandvideoedits2-placeholder.webp"
-  },
-  {
     "title": "Unforgettable Team-Building with Nashville Experience Tours’ Corporate Tours",
     "slug": "nashville-corporate-tours",
     "category": "travel",
@@ -454,6 +438,14 @@
     "date": "2025-09-06",
     "content": "Dive into my 2025 Stars777.org review, exploring its exciting Indian games, bonuses, security, and why it’s a top choice for online gaming enthusiasts.",
     "image": "/images/stars777-org-placeholder.webp"
+  },
+  {
+    "title": "Professional Video Editing Services for 2025 | Photo and Video Edits",
+    "slug": "photo-video-editing",
+    "category": "real-estate",
+    "date": "2025-09-08",
+    "content": "Transform raw footage into polished, engaging content with Photo and Video Edits’ professional video editing services in 2025. Perfect for businesses and creators.",
+    "image": "/images/photoandvideoedits2-placeholder.webp"
   }
 
 ]
