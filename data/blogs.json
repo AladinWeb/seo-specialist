@@ -1,13 +1,5 @@
 [
   {
-    "title": "Exploring Nashville with a Private Walking Tour | 2025",
-    "slug": "nashville-private-tour",
-    "category": "travel",
-    "date": "2025-06-20",
-    "content": "My personalized journey with Nashville Experience Tours’ private walking tour in 2025.",
-    "image": "/images/nashville-private-tour-placeholder.webp"
-  },
-  {
     "title": "Managing Anxiety with MyndWorks Psychiatry’s Expert Guidance 2025",
     "slug": "myndworks-anxiety",
     "category": "health",
@@ -446,6 +438,14 @@
     "date": "2025-09-12",
     "content": "Experience transformative team-building with Nashville Experience Tours’ corporate tours in 2025. Customized Nashville adventures await your team!",
     "image": "/images/nashvilleexperiencetours-placeholder.webp"
+  },
+  {
+    "title": "Personalized Nashville Adventures: Private Walking Tours in 2025",
+    "slug": "nashville-private-tour",
+    "category": "travel",
+    "date": "2025-09-13",
+    "content": "Discover Nashville’s hidden gems with a private walking tour from Nashville Experience Tours in 2025. Personalized, immersive adventures await!",
+    "image": "/images/nashville-private-tour-placeholder.webp"
   }
 
 ]
