@@ -36,6 +36,11 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://fuseven.net/blog/wintime-casino</loc>
+        <lastmod>2025-09-18</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://fuseven.net/blog/casino-plus</loc>
         <lastmod>2025-09-17</lastmod>
         <priority>0.80</priority>
@@ -303,11 +308,6 @@
     <url>
         <loc>https://fuseven.net/blog/color-grading-and-color-correction-in-real-estate</loc>
         <lastmod>2025-08-17</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://fuseven.net/blog/wintime-casino</loc>
-        <lastmod>2025-07-24</lastmod>
         <priority>0.80</priority>
     </url>
 </urlset>
