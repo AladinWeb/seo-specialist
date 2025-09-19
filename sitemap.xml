@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://fuseven.net/</loc>
-        <lastmod>2025-09-19</lastmod>
+        <lastmod>2025-09-10</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
@@ -33,6 +33,11 @@
     <url>
         <loc>https://fuseven.net/terms-of-service</loc>
         <lastmod>2025-08-10</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://fuseven.net/blog/color-grading-and-color-correction-in-real-estate</loc>
+        <lastmod>2025-09-18</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
@@ -303,11 +308,6 @@
     <url>
         <loc>https://fuseven.net/blog/ai-photo-clarity</loc>
         <lastmod>2025-08-16</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://fuseven.net/blog/color-grading-and-color-correction-in-real-estate</loc>
-        <lastmod>2025-08-17</lastmod>
         <priority>0.80</priority>
     </url>
 </urlset>
