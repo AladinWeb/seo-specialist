@@ -9,7 +9,7 @@ const dateFilter = document.getElementById('dateFilter');
 const noBlogsMessage = document.getElementById('noBlogsMessage');
 
 // Populate date filter with year options starting from 2025
-const startYear = 2025;
+const startYear = 2024;
 const optionNoDate = document.createElement('option');
 optionNoDate.value = 'null';
 optionNoDate.textContent = 'No Date';
@@ -126,3 +126,4 @@ dateFilter.addEventListener('change', () => {
 
 
 fetchBlogs();
+
