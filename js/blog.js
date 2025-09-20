@@ -8,21 +8,19 @@ const categoryFilter = document.getElementById('categoryFilter');
 const dateFilter = document.getElementById('dateFilter');
 const noBlogsMessage = document.getElementById('noBlogsMessage');
 
-// Populate date filter with month/year options starting from June 2025
-const startDate = new Date('2025-06-01');
+// Populate date filter with year options starting from 2025
+const startYear = 2025;
 const optionNoDate = document.createElement('option');
 optionNoDate.value = 'null';
 optionNoDate.textContent = 'No Date';
 optionNoDate.selected = true;
 dateFilter.appendChild(optionNoDate);
 
-for (let i = 0; i < 24; i++) { // Generate 2 years of months
-  const date = new Date(startDate);
-  date.setMonth(startDate.getMonth() + i);
-  const yearMonth = date.toISOString().slice(0, 7); // YYYY-MM
+for (let i = 0; i < 5; i++) { // Generate 5 years (you can adjust)
+  const year = startYear + i;
   const option = document.createElement('option');
-  option.value = yearMonth;
-  option.textContent = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+  option.value = year.toString(); // YYYY
+  option.textContent = year;
   dateFilter.appendChild(option);
 }
 
@@ -125,5 +123,6 @@ dateFilter.addEventListener('change', () => {
   currentPage = 1;
   displayBlogs(currentPage, categoryFilter.value, dateFilter.value);
 });
+
 
 fetchBlogs();
