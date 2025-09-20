@@ -36,8 +36,13 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://fuseven.net/blog/ai-photo-clarity</loc>
+        <lastmod>2025-09-20</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://fuseven.net/blog/color-grading-and-color-correction-in-real-estate</loc>
-        <lastmod>2025-09-18</lastmod>
+        <lastmod>2025-09-19</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
@@ -303,11 +308,6 @@
     <url>
         <loc>https://fuseven.net/blog/oakland-renovation</loc>
         <lastmod>2025-08-15</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://fuseven.net/blog/ai-photo-clarity</loc>
-        <lastmod>2025-08-16</lastmod>
         <priority>0.80</priority>
     </url>
 </urlset>
