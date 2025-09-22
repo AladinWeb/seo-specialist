@@ -2,37 +2,30 @@ let blogs = [];
 const blogsPerPage = 20;
 let currentPage = 1;
 
-// DOM references
 const blogGrid = document.getElementById('blogGrid');
 const pagination = document.getElementById('pagination');
 const categoryFilter = document.getElementById('categoryFilter');
 const dateFilter = document.getElementById('dateFilter');
 const noBlogsMessage = document.getElementById('noBlogsMessage');
 
-(function populateDateFilter() {
-  const startDate = new Date('2025-06-01');
+function populateYearFilter() {
+  const years = [...new Set(blogs.map(blog => blog.date.slice(0, 4)))].sort((a, b) => b - a);
+
+  dateFilter.innerHTML = '';
 
   const optionNoDate = document.createElement('option');
   optionNoDate.value = 'null';
-  optionNoDate.textContent = 'No Date';
+  optionNoDate.textContent = 'All Years';
   optionNoDate.selected = true;
   dateFilter.appendChild(optionNoDate);
 
-  for (let i = 0; i < 24; i++) {
-    const date = new Date(startDate);
-    date.setMonth(startDate.getMonth() + i);
-    const yearMonth = date.toISOString().slice(0, 7); // YYYY-MM
-
+  years.forEach(year => {
     const option = document.createElement('option');
-    option.value = yearMonth;
-    option.textContent = date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long'
-    });
-
+    option.value = year;
+    option.textContent = year;
     dateFilter.appendChild(option);
-  }
-})();
+  });
+}
 
 async function fetchBlogs() {
   try {
@@ -43,6 +36,7 @@ async function fetchBlogs() {
 
     blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+    populateYearFilter();
     displayBlogs(currentPage);
   } catch (error) {
     console.error('Error fetching blogs:', error);
@@ -51,15 +45,15 @@ async function fetchBlogs() {
   }
 }
 
-function displayBlogs(page, category = 'all', date = null) {
+function displayBlogs(page, category = 'all', year = null) {
   blogGrid.innerHTML = '';
   noBlogsMessage.style.display = 'none';
 
   const filteredBlogs = blogs.filter(blog => {
     const matchesCategory = category === 'all' || blog.category === category;
-    const blogYearMonth = blog.date.slice(0, 7); // YYYY-MM
-    const matchesDate = !date || date === 'null' || blogYearMonth === date;
-    return matchesCategory && matchesDate;
+    const blogYear = blog.date.slice(0, 4); // YYYY
+    const matchesYear = !year || year === 'null' || blogYear === year;
+    return matchesCategory && matchesYear;
   });
 
   if (filteredBlogs.length === 0) {
@@ -85,10 +79,10 @@ function displayBlogs(page, category = 'all', date = null) {
     blogGrid.appendChild(blogCard);
   });
 
-  setupPagination(filteredBlogs.length, category, date);
+  setupPagination(filteredBlogs.length, category, year);
 }
 
-function setupPagination(totalBlogs, category, date) {
+function setupPagination(totalBlogs, category, year) {
   pagination.innerHTML = '';
   const totalPages = Math.ceil(totalBlogs / blogsPerPage);
 
@@ -99,7 +93,7 @@ function setupPagination(totalBlogs, category, date) {
     prevButton.addEventListener('click', () => {
       if (currentPage > 1) {
         currentPage--;
-        displayBlogs(currentPage, category, date);
+        displayBlogs(currentPage, category, year);
       }
     });
     pagination.appendChild(prevButton);
@@ -110,7 +104,7 @@ function setupPagination(totalBlogs, category, date) {
       pageButton.disabled = i === currentPage;
       pageButton.addEventListener('click', () => {
         currentPage = i;
-        displayBlogs(currentPage, category, date);
+        displayBlogs(currentPage, category, year);
       });
       pagination.appendChild(pageButton);
     }
@@ -121,7 +115,7 @@ function setupPagination(totalBlogs, category, date) {
     nextButton.addEventListener('click', () => {
       if (currentPage < totalPages) {
         currentPage++;
-        displayBlogs(currentPage, category, date);
+        displayBlogs(currentPage, category, year);
       }
     });
     pagination.appendChild(nextButton);
