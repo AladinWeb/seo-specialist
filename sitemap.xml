@@ -36,6 +36,11 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://fuseven.net/blog/custom-millwork</loc>
+        <lastmod>2025-09-23</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://fuseven.net/blog/oakland-renovation</loc>
         <lastmod>2025-09-22</lastmod>
         <priority>0.80</priority>
@@ -303,11 +308,6 @@
     <url>
         <loc>https://fuseven.net/blog/allworld-seo</loc>
         <lastmod>2025-09-17</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://fuseven.net/blog/custom-millwork</loc>
-        <lastmod>2025-08-14</lastmod>
         <priority>0.80</priority>
     </url>
 </urlset>
