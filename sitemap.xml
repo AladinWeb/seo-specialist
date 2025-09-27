@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://fuseven.net/</loc>
-        <lastmod>2025-09-26T13:05:14+00:00</lastmod>
+        <lastmod>2025-09-27T10:10:21+00:00</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
@@ -33,6 +33,11 @@
     <url>
         <loc>https://fuseven.net/terms-of-service</loc>
         <lastmod>2025-08-10</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://fuseven.net/blog/starting-business-bulacan</loc>
+        <lastmod>2025-09-27T10:10:21+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
