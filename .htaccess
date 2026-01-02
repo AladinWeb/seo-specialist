@@ -2,7 +2,20 @@
 RewriteEngine On
 RewriteBase /
 
-# Remove .html extension internally
+# === MAINTENANCE MODE: Redirect everything to maintenance.html ===
+# Exclude the maintenance page itself and common asset file types
+RewriteCond %{REQUEST_URI} !^/maintenance\.html$ [NC]
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot)$ [NC]
+
+# Redirect all other requests to the maintenance page (temporary redirect)
+RewriteRule ^(.*)$ /maintenance.html [R=302,L]
+
+# (Optional: Change R=302 to R=307 for temporary redirect, or use 503 for SEO-friendly maintenance)
+# ErrorDocument 503 /maintenance.html
+# RewriteRule ^(.*)$ - [R=503,L]
+
+# Your original rule for removing .html extension (kept but placed after maintenance rules)
+# It will only apply if you disable maintenance later
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
