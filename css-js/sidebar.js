@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Latest 4
         const latest4 = blogs.slice(0, 4);
         
-        // Current post slug
-        const currentSlug = window.location.pathname.split('/').pop().replace('.html', '');
+        // Current post slug – remove .html if present (for active post highlighting)
+        const currentSlug = window.location.pathname
+            .split('/')
+            .pop()
+            .replace(/\.html$/, '');  // Safely removes .html only if it exists
         
         // Format date helper
         const formatDate = (dateStr) => {
@@ -152,7 +155,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 .sidebar-contact p {
                     line-height: 1.6;
-                    word-break: break-all; /* Forces long email to wrap */
+                    word-break: break-all;
                 }
 
                 .sidebar-contact a {
@@ -202,7 +205,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <div class="sidebar-latest-post ${isActive ? 'active' : ''}">
                     ${imageHTML}
                     <h4 class="sidebar-latest-title">
-                        <a href="../blog/${post.slug}.html">${post.title}</a>
+                        <a href="../blog/${post.slug}">${post.title}</a>
                     </h4>
                     <div class="sidebar-latest-date">${formatDate(post.date)}</div>
                 </div>
@@ -225,13 +228,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <ul>
             `;
             archiveMap[year].sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(post => {
-                sidebarHTML += `<li><a href="../blog/${post.slug}.html">${post.title}</a></li>`;
+                sidebarHTML += `<li><a href="../blog/${post.slug}">${post.title}</a></li>`;
             });
             sidebarHTML += `</ul></div>`;
         });
         sidebarHTML += `</div>`;
 
-        // Contact email - improved wrapping
+        // Contact email
         sidebarHTML += `
             <div class="sidebar-contact">
                 <h3>Contact</h3>
