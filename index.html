@@ -3,231 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Maintenance - Fuseven</title>
-    <style>
-        /* Modern digital marketing theme: Dark mode for professional tech feel, Bulacan/PH location tie-in with subtle gradients */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2a2a5a 100%);
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            text-align: center;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .logo {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, #00d4ff, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-
-        .maintenance-icon {
-            font-size: 6rem;
-            margin-bottom: 30px;
-            animation: pulse 2s infinite;
-            background: linear-gradient(45deg, #00d4ff, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .message {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .refreshing {
-            color: #00d4ff;
-            font-weight: 600;
-        }
-
-        .eta {
-            background: rgba(255, 107, 107, 0.2);
-            border: 1px solid rgba(255, 107, 107, 0.4);
-            border-radius: 50px;
-            padding: 15px 30px;
-            margin: 30px 0;
-            font-size: 1.1rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .cta {
-            display: inline-block;
-            background: linear-gradient(45deg, #00d4ff, #0099cc);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-            margin-top: 20px;
-        }
-
-        .cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
-        }
-
-        .bulacan-tag {
-            font-size: 0.95rem;
-            color: #4ecdc4;
-            margin-top: 40px;
-            opacity: 0.8;
-        }
-
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(0, 212, 255, 0.6);
-            border-radius: 50%;
-            animation: float 6s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 2.5rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .maintenance-icon {
-                font-size: 4rem;
-            }
-        }
-
-        /* SEO optimized meta for maintenance page */
-        meta[name="robots"] { content: "noindex, nofollow"; }
-    </style>
+    <title>Fuseven - Pixel-Perfect Trends & Insights Blog</title>
+    <meta name="description" content="Fuseven is a retro-pixel styled blog delivering curated trends, in-depth insights, and informative articles on gaming, technology, lifestyle, wellness, and more. Rebranded in 2026 for a fresh digital experience.">
+    <link rel="stylesheet" href="css-js/styles.css">
+    <link rel="stylesheet" href="css-js/header-footer.css">
+    <script src="css-js/header-footer.js" defer></script>
+    <script src="css-js/scripts.js" defer></script>
 </head>
 <body>
-    <!-- Subtle animated particles for digital/tech theme -->
-    <div class="particles" id="particles"></div>
-
-    <div class="container">
-        <div class="logo">FUSEVEN</div>
+    <header id="header-placeholder"></header>
+    
+    <main>
+        <section class="hero">
+            <h1 class="pixelated-text">Welcome to Fuseven</h1>
+            <p class="pixelated-text">Your pixel-perfect source for trends, insights, and informative blogs on various topics.</p>
+            <button class="pixel-button" onclick="animateButton(this)">Explore Blogs</button>
+        </section>
         
-        <div class="maintenance-icon">🔧</div>
-        
-        <h1>We're Refreshing the Site!</h1>
-        
-        <p class="message">
-            Your trusted <strong>Digital Marketing & SEO Agency in Bulacan</strong> is undergoing a complete site refresh to bring you 
-            even better SEO tools, faster web development, and cutting-edge social media strategies. Get ready to rank #1 on Google like never before!
-        </p>
-        
-        <div class="eta">
-            <strong>⏱️ Expected Back Online:</strong> <span class="refreshing">Within 2-4 Hours</span><br>
-            (Serving San Miguel, Malolos, Meycauayan, and all of Bulacan – and beyond!)
-        </div>
-        
-        <p class="message">
-            In the meantime, claim your <strong>FREE SEO Audit</strong> or consultation. We'll get your Bulacan business dominating search results!
-        </p>
-        
-        <a href="https://fuseven.net/contact-us" class="cta">Get Free Consultation & Quote</a>
-        
-        <div class="bulacan-tag">
-            Fuseven – Top-Rated Digital Marketing in Bulacan, Philippines | Founded 2025
-        </div>
-    </div>
-
-    <script>
-        // Create floating particles for modern digital effect
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
-        createParticles();
-
-        // Refresh page meta for crawlers (noindex)
-        const meta = document.createElement('meta');
-        meta.name = 'robots';
-        meta.content = 'noindex, nofollow';
-        document.head.appendChild(meta);
-    </script>
+        <section class="blog-preview">
+            <h2 class="pixelated-text">Latest Posts</h2>
+            <div class="blog-grid" id="blog-grid">
+                <!-- Dynamically filled by scripts.js -->
+                <p class="loading">Loading latest posts...</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="footer-placeholder"></footer>
 </body>
 </html>

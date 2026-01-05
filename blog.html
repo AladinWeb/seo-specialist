@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Blogs - Fuseven</title>
+    <meta name="description" id="page-description" content="Explore all blog posts on trends, insights, and informative topics at Fuseven.">
+    <link rel="stylesheet" href="css-js/styles.css">
+    <link rel="stylesheet" href="css-js/header-footer.css">
+    <script src="css-js/header-footer.js" defer></script>
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    
+    <main class="blog-page-main">
+        <section class="blog-intro">
+            <div class="container">
+                <h1 class="pixelated-text">All Blogs</h1>
+                <p class="pixelated-text">Dive deep into trends, insights, and informative articles across various topics.</p>
+            </div>
+        </section>
+
+        <section class="blog-list-section">
+            <div class="container">
+                <div class="blog-layout">
+                    <!-- Category Filter Sidebar -->
+                    <aside class="category-sidebar">
+                        <h3 class="pixelated-text">Categories</h3>
+                        <ul id="category-list">
+                            <li class="category-item active" data-category="all">All Posts</li>
+                            <!-- Dynamically populated from blogs.json -->
+                        </ul>
+                    </aside>
+
+                    <!-- Blog Grid -->
+                    <div class="blog-content">
+                        <div class="blog-grid" id="blog-grid">
+                            <p class="loading">Loading blogs...</p>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination" id="pagination">
+                            <!-- Dynamically inserted -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="footer-placeholder"></footer>
+
+    <script>
+        // Blog page specific JavaScript
+        let allBlogs = [];
+        const POSTS_PER_PAGE = 15;
+        let currentPage = 1;
+        let currentCategory = 'all';
+
+        // Fetch blogs.json and initialize
+        async function loadBlogs() {
+            try {
+                const response = await fetch('css-js/blogs.json');
+                if (!response.ok) throw new Error('Failed to load blogs.json');
+                
+                allBlogs = await response.json();
+                
+                // Extract unique categories
+                const categorySet = new Set();
+                allBlogs.forEach(blog => {
+                    const cat = blog.category?.trim();
+                    if (cat) categorySet.add(cat);
+                });
+
+                // Populate sidebar
+                populateCategories(categorySet);
+                
+                // Render blogs
+                renderBlogs();
+                
+            } catch (error) {
+                console.error('Error loading blogs:', error);
+                document.getElementById('blog-grid').innerHTML = 
+                    '<p class="loading" style="color: #ff0;">Failed to load blogs. Please try again later.</p>';
+            }
+        }
+
+        function populateCategories(categorySet) {
+            const categoryList = document.getElementById('category-list');
+            categoryList.innerHTML = '<li class="category-item active" data-category="all">All Posts</li>';
+            
+            const sortedCategories = Array.from(categorySet).sort((a, b) => a.localeCompare(b));
+            
+            sortedCategories.forEach(cat => {
+                const li = document.createElement('li');
+                li.className = 'category-item';
+                li.dataset.category = cat;
+                li.textContent = cat;
+                categoryList.appendChild(li);
+            });
+
+            // Click handlers
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                    
+                    currentCategory = item.dataset.category;
+                    currentPage = 1;
+                    renderBlogs();
+                });
+            });
+        }
+
+        function renderBlogs() {
+            const grid = document.getElementById('blog-grid');
+            grid.innerHTML = '<p class="loading">Loading...</p>';
+
+            let filteredBlogs = allBlogs;
+
+            if (currentCategory !== 'all') {
+                filteredBlogs = allBlogs.filter(blog => 
+                    (blog.category?.trim() || 'General') === currentCategory
+                );
+            }
+
+            // Sort newest first
+            filteredBlogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            // Update meta
+            updatePageMeta(currentCategory, filteredBlogs.length);
+
+            // Pagination
+            const totalPages = Math.ceil(filteredBlogs.length / POSTS_PER_PAGE);
+            const start = (currentPage - 1) * POSTS_PER_PAGE;
+            const end = start + POSTS_PER_PAGE;
+            const pageBlogs = filteredBlogs.slice(start, end);
+
+            grid.innerHTML = '';
+
+            if (pageBlogs.length === 0) {
+                grid.innerHTML = '<p class="loading">No posts found in this category.</p>';
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+
+            pageBlogs.forEach(post => {
+                const article = document.createElement('article');
+                article.className = 'blog-card';
+                
+                const postDate = new Date(post.date);
+                const formattedDate = postDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+                
+                // Featured image support (same as homepage)
+                let imageHTML = `
+                    <div class="card-image-placeholder">
+                        <span class="pixelated-text">PIXEL</span>
+                    </div>
+                `;
+                
+                if (post.image) {
+                    // Extract filename only and load from root /images/
+                    const filename = post.image.split('/').pop();
+                    imageHTML = `
+                        <img src="images/${filename}" alt="${post.title}" class="card-featured-img">
+                    `;
+                }
+                
+                article.innerHTML = `
+                    ${imageHTML}
+                    <div class="card-content">
+                        <div class="card-category">${post.category || 'General'}</div>
+                        <h3 class="pixelated-text card-title">${post.title}</h3>
+                        <p class="card-description">${post.description}</p>
+                        <div class="card-meta">
+                            <span class="card-date">${formattedDate}</span>
+                            <a href="blog/${post.slug}.html" class="pixel-link card-readmore">Read More →</a>
+                        </div>
+                    </div>
+                `;
+                
+                grid.appendChild(article);
+            });
+
+            renderPagination(totalPages);
+        }
+
+        function updatePageMeta(category, postCount) {
+            let title = 'Blogs';
+            let description = 'Explore all blog posts on trends, insights, and informative topics at Fuseven.';
+            
+            if (category !== 'all') {
+                title = `${category} Blogs`;
+                description = `Read ${postCount} articles about ${category.toLowerCase()} – trends, tips, and in-depth insights on Fuseven.`;
+            }
+            
+            document.getElementById('page-title').textContent = `${title} - Fuseven`;
+            document.getElementById('page-description').setAttribute('content', description);
+        }
+
+        function renderPagination(totalPages) {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            if (totalPages <= 1) return;
+
+            if (currentPage > 1) {
+                const prev = document.createElement('button');
+                prev.className = 'pixel-button pagination-btn';
+                prev.textContent = '← Previous';
+                prev.addEventListener('click', () => {
+                    currentPage--;
+                    renderBlogs();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                pagination.appendChild(prev);
+            }
+
+            const startPage = Math.max(1, currentPage - 3);
+            const endPage = Math.min(totalPages, currentPage + 3);
+
+            if (startPage > 1) {
+                pagination.appendChild(createPageBtn(1));
+                if (startPage > 2) {
+                    const dots = document.createElement('span');
+                    dots.textContent = '...';
+                    dots.style.margin = '0 10px';
+                    pagination.appendChild(dots);
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                const btn = createPageBtn(i);
+                if (i === currentPage) btn.classList.add('active');
+                pagination.appendChild(btn);
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const dots = document.createElement('span');
+                    dots.textContent = '...';
+                    dots.style.margin = '0 10px';
+                    pagination.appendChild(dots);
+                }
+                pagination.appendChild(createPageBtn(totalPages));
+            }
+
+            if (currentPage < totalPages) {
+                const next = document.createElement('button');
+                next.className = 'pixel-button pagination-btn';
+                next.textContent = 'Next →';
+                next.addEventListener('click', () => {
+                    currentPage++;
+                    renderBlogs();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                pagination.appendChild(next);
+            }
+        }
+
+        function createPageBtn(pageNum) {
+            const btn = document.createElement('button');
+            btn.className = 'pixel-button pagination-btn';
+            btn.textContent = pageNum;
+            btn.addEventListener('click', () => {
+                currentPage = pageNum;
+                renderBlogs();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            return btn;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('fade-in');
+            loadBlogs();
+        });
+    </script>
+
+    <style>
+        /* Blog page specific styles */
+        .blog-page-main {
+            min-height: 100vh;
+        }
+
+        .blog-intro {
+            background-color: #222;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 8px solid #fff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .blog-list-section {
+            padding: 60px 0;
+        }
+
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+        }
+
+        .category-sidebar {
+            background-color: #222;
+            padding: 30px;
+            border: 4px solid #fff;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .category-sidebar h3 {
+            margin: 0 0 20px 0;
+            font-size: 1.4em;
+        }
+
+        #category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-item {
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            background-color: #333;
+            border: 4px solid #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-item:hover {
+            transform: translateX(8px);
+            box-shadow: 8px 0 0 #ff0;
+        }
+
+        .category-item.active {
+            background-color: #ff0;
+            color: #000;
+            border-color: #000;
+            box-shadow: 8px 0 0 #000;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 50px;
+        }
+
+        .pagination-btn {
+            min-width: 44px;
+            padding: 10px 16px;
+        }
+
+        .pagination-btn.active {
+            background-color: #f00;
+            transform: scale(1.1);
+        }
+
+        .loading {
+            text-align: center;
+            grid-column: 1 / -1;
+            color: #aaa;
+            font-size: 1em;
+        }
+
+        @media (max-width: 1024px) {
+            .blog-layout {
+                grid-template-columns: 250px 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .category-sidebar {
+                position: static;
+                margin-bottom: 30px;
+            }
+
+            .blog-intro {
+                padding: 60px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pagination {
+                gap: 8px;
+            }
+
+            .pagination-btn {
+                padding: 8px 12px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</body>
+</html>
