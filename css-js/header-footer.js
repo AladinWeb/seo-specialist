@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <ul class="nav-links">
                 <li class="close-li"><button class="close-btn">X</button></li>
                 <li><a href="/" class="pixel-link">Home</a></li>
-                <li><a href="/blog.html" class="pixel-link">Blogs</a></li>
-                <li><a href="/about.html" class="pixel-link">About</a></li>
-                <li><a href="/contact.html" class="pixel-link">Contact</a></li>
+                <li><a href="/blog" class="pixel-link">Blogs</a></li>
+                <li><a href="/about" class="pixel-link">About</a></li>
+                <li><a href="/contact" class="pixel-link">Contact</a></li>
             </ul>
         </nav>
     `;
@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="footer-content">
             <p class="pixelated-text">&copy; 2026 Fuseven. All rights reserved.</p>
             <ul class="social-links">
-                <li><a href="/privacy-policy.html" class="pixel-link">Privacy Policy</a></li>
-                <li><a href="/terms-of-service.html" class="pixel-link">Terms of Service</a></li>
-                <li><a href="/sitemap.html" class="pixel-link">Sitemap</a></li>
+                <li><a href="/privacy-policy" class="pixel-link">Privacy Policy</a></li>
+                <li><a href="/terms-of-service" class="pixel-link">Terms of Service</a></li>
+                <li><a href="/sitemap" class="pixel-link">Sitemap</a></li>
             </ul>
         </div>
     `;
