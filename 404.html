@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Fuseven</title>
+    <meta name="description" content="Oops! The page you're looking for doesn't exist on Fuseven. Return home or explore our latest blogs.">
+    <link rel="stylesheet" href="css-js/styles.css">
+    <link rel="stylesheet" href="css-js/header-footer.css">
+    <script src="css-js/header-footer.js" defer></script>
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+
+    <main class="error-page-main">
+        <section class="error-hero">
+            <div class="container">
+                <h1 class="pixelated-text error-title">404</h1>
+                <p class="pixelated-text error-subtitle">Page Not Found</p>
+                <p class="error-message">
+                    Looks like this pixel got lost in the void.<br>
+                    The page you're looking for doesn't exist (yet).
+                </p>
+                <div class="error-actions">
+                    <a href="/" class="pixel-button">Return Home</a>
+                    <a href="/blog.html" class="pixel-button secondary">Explore Blogs</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="error-suggestions">
+            <div class="container">
+                <h2 class="pixelated-text">Maybe try these instead?</h2>
+                <ul class="error-links">
+                    <li><a href="/" class="pixel-link">Home</a></li>
+                    <li><a href="/blog.html" class="pixel-link">All Blogs</a></li>
+                    <li><a href="/about.html" class="pixel-link">About Fuseven</a></li>
+                    <li><a href="/contact.html" class="pixel-link">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <noscript>
+        JavaScript is required for full navigation. You can still visit: 
+        <a href="/">Home</a>, 
+        <a href="/blog.html">Blogs</a>, 
+        <a href="/about.html">About</a>.
+    </noscript>
+
+    <style>
+        .error-page-main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .error-hero {
+            flex: 1;
+            background-color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 8px solid #fff;
+        }
+
+        .error-title {
+            font-size: 8em;
+            margin: 0;
+            color: #f00;
+            text-shadow: 0 0 20px #f00;
+            animation: glitch-404 2s infinite;
+        }
+
+        .error-subtitle {
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+
+        .error-message {
+            font-size: 1.4em;
+            margin: 30px 0;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            margin: 40px 0;
+        }
+
+        .error-actions .pixel-button {
+            margin: 0 15px;
+            padding: 16px 32px;
+            font-size: 1.2em;
+        }
+
+        .error-actions .secondary {
+            background-color: #333;
+            border: 4px solid #fff;
+        }
+
+        .error-actions .secondary:hover {
+            background-color: #f00;
+        }
+
+        .error-suggestions {
+            background-color: #222;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .error-suggestions h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .error-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .error-links li {
+            margin: 10px;
+        }
+
+        .error-links a {
+            font-size: 1.4em;
+            color: #ff0;
+            text-decoration: none;
+            border-bottom: 4px solid transparent;
+            padding-bottom: 4px;
+            transition: all 0.3s;
+        }
+
+        .error-links a:hover {
+            color: #f00;
+            border-bottom: 4px solid #f00;
+            animation: pixel-glitch 0.5s infinite;
+        }
+
+        @keyframes glitch-404 {
+            0% { text-shadow: 0 0 20px #f00; transform: translate(0); }
+            20% { text-shadow: -10px 10px 0 #ff0, 10px -10px 0 #0ff; transform: translate(-10px, 10px); }
+            40% { text-shadow: 10px -10px 0 #ff0, -10px 10px 0 #0ff; transform: translate(10px, -10px); }
+            60% { text-shadow: -10px 10px 0 #0ff, 10px -10px 0 #ff0; transform: translate(-10px, -10px); }
+            80% { text-shadow: 10px 10px 0 #0ff, -10px -10px 0 #ff0; transform: translate(10px, 10px); }
+            100% { text-shadow: 0 0 20px #f00; transform: translate(0); }
+        }
+
+        @media (max-width: 768px) {
+            .error-title {
+                font-size: 6em;
+            }
+            .error-subtitle {
+                font-size: 2em;
+            }
+            .error-message {
+                font-size: 1.2em;
+            }
+            .error-actions .pixel-button {
+                display: block;
+                margin: 15px auto;
+                width: 80%;
+                max-width: 300px;
+            }
+            .error-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-title {
+                font-size: 4.5em;
+            }
+            .error-actions .pixel-button {
+                font-size: 1em;
+                padding: 14px 24px;
+            }
+        }
+    </style>
+</body>
+</html>
