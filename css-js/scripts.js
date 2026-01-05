@@ -60,7 +60,7 @@ async function loadLatestPosts() {
                     <p class="card-description">${post.description}</p>
                     <div class="card-meta">
                         <span class="card-date">${formattedDate}</span>
-                        <a href="blog/${post.slug}.html" class="pixel-link card-readmore">Read More →</a>
+                        <a href="blog/${post.slug}" class="pixel-link card-readmore">Read More →</a>
                     </div>
                 </div>
             `;
