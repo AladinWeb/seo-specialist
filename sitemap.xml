@@ -9,7 +9,43 @@
 
 <url>
   <loc>https://fuseven.net/</loc>
-  <lastmod>2026-01-02T03:53:18+00:00</lastmod>
+  <lastmod>2026-01-05T06:34:38+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://fuseven.net/blog</loc>
+  <lastmod>2026-01-05T06:34:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fuseven.net/about</loc>
+  <lastmod>2026-01-05T06:34:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fuseven.net/contact</loc>
+  <lastmod>2026-01-05T06:34:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fuseven.net/privacy-policy</loc>
+  <lastmod>2026-01-05T06:34:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fuseven.net/terms-of-service</loc>
+  <lastmod>2026-01-05T06:34:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fuseven.net/blog/top-10-most-anticipated-video-games-2026</loc>
+  <lastmod>2026-01-05T06:34:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fuseven.net/sitemap</loc>
+  <lastmod>2026-01-05T06:34:38+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 
 
