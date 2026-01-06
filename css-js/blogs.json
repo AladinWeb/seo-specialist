@@ -1,11 +1,19 @@
 [
     {
+        "title": "NBA Mid-Season Power Rankings: Who's Contending in January 2026?",
+        "slug": "nba-mid-season-power-rankings-january-2026",
+        "date": "2026-01-06",
+        "category": "Sports",
+        "description": "A breakdown of the top 10 NBA teams halfway through the 2025-26 season, with the Thunder dominating, Celtics reloading, and surprise contenders emerging.",
+        "image": "nba-mid-season-power-rankings-2026.webp"
+    },
+    {
         "title": "Top 10 Most Anticipated New Video Games of 2026",
         "slug": "top-10-most-anticipated-video-games-2026",
         "date": "2026-01-05",
         "category": "Games",
-        "description": "John Paul Pajaro ranks the Top 10 most anticipated 2026 video games from #1 GTA VI to #10 Crimson Desert, blending professional analysis with personal opinions based on trailers, developer history, and industry buzz.",
-        "image": "images/top-10-most-anticipated-video-games-2026.webp"
+        "description": "A ranking of the top 10 most anticipated 2026 video games from #1 GTA VI to #10 Crimson Desert, based on trailers, developer history, and industry buzz.",
+        "image": "top-10-most-anticipated-video-games-2026.webp"
     }
     
 ]
